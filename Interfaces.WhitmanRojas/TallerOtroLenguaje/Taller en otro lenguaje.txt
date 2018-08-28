@@ -1,0 +1,102 @@
+//Herencia
+public class Persona {
+    private String nombre;
+    private String apellidos;
+    private int edad;
+
+    public Persona (String nombre, String apellidos, int edad) {
+        this.nombre = nombre;
+        this.apellidos = apellidos;
+        this.edad = edad;                   }
+
+    public String getNombre () { return nombre;  }
+    public String getApellidos () { return apellidos;  }
+    public int getEdad () { return edad;   }
+}
+
+public class Profesor extends Persona {    
+	private String IdProfesor;
+
+    public Profesor (String nombre, String apellidos, int edad) {
+        super(nombre, apellidos, edad);
+        IdProfesor = "Unknown";
+   }
+
+    public void setIdProfesor (String IdProfesor) {
+	 this.IdProfesor = IdProfesor;   
+   }
+
+    public String getIdProfesor () {
+	 return IdProfesor;
+   }
+
+    public void mostrarNombreApellidosYCarnet() {              
+        System.out.println ("Profesor de nombre: " + getNombre() + " " +  getApellidos() +
+         " con Id de profesor: " + getIdProfesor() );
+ }
+}
+
+public class creaProfe {
+
+    public static void main (String [ ] Args) {
+        Profesor profesor1 = new Profesor ("pepito", "perez", 78);
+        profesor1.setIdProfesor("Profe 22");
+        profesor1.mostrarNombreApellidosYCarnet();}
+
+}
+
+// Encapsulamiento
+
+public class Curso {
+	
+	private int codCurso;
+
+		public void setCodCurso(int cC) {
+			codCurso=cC;
+		}
+
+	public int getTipo(){
+		return tipo;
+	}
+
+}
+
+class verCurso{
+	public static void main(String[] args) {
+		Curso c = new Curso();
+		c.setCodCurso(145);
+		System.out.println("Codigo de curso es:" + c.getTipo());
+	}
+
+}
+
+//Clase abstracta
+
+abstract class Periferico{  
+	public String tipo;
+  
+	public abstract void funcion();
+} 
+
+class Teclado extends Periferico {
+ 
+	public teclado(){
+ 		tipo="Teclado";
+	}
+  
+ 	public void funcion() {
+  		System.out.println("El teclado escribe");
+ 	}
+}
+ 
+class Mouse extends periferico {
+ 
+	public mouse(){
+  		tipo="Mouse";
+	}
+  
+	public void funcion() {
+		System.out.println("El mouse mueve el cursor");
+ 	}
+}
+ 
