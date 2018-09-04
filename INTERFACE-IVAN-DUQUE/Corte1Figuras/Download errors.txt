@@ -1,0 +1,8 @@
+﻿Sorry, there was a problem downloading some files from OneDrive. Please try again.
+
+.netbeans_automatic_build - https://onedrive.live.com/?cid=20414ae8b8f9181c&id=20414AE8B8F9181C%2143869&action=Download
+
+.netbeans_update_resources - https://onedrive.live.com/?cid=20414ae8b8f9181c&id=20414AE8B8F9181C%2143868&action=Download
+
+
+
