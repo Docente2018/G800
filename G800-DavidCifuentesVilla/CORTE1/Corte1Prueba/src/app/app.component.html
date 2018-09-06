@@ -1,0 +1,45 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+</div>
+<form #figuras>
+  <h1>Areas y Perimetros de Figuras geometricas</h1>
+  <select [(ngModel)]="figura" (change)="limpiar()" name="figura" class="form-control" required>
+    <option value="1">Triangulo</option>
+    <option value="2">Cuadrado</option>
+    <option value="3">Rectangulo</option>
+    <option value="4">Circulo</option>
+  </select>
+  <hr>
+  <div *ngIf="figura == 1">
+    <h3>Seleccionaste el Triangulo por favor ingresa la siguiente informacion</h3>
+    lado1: <input type="number" class="form-control" [(ngModel)]="lado1" name="lado1" >
+    lado2: <input type="number" class="form-control" [(ngModel)]="lado2" name="lado2" >
+    lado3: <input type="number" class="form-control" [(ngModel)]="lado3" name="lado3" >
+    baseTria: <input type="number" class="form-control" [(ngModel)]="baseTria" name="lado" >
+    alturaTria: <input type="number" class="form-control" [(ngModel)]="alturaTria" name="lado" >
+  </div>
+  <div *ngIf="figura == 2">
+    <h3>Seleccionaste el Cuadrado por favor ingresa la siguiente informacion</h3>
+    lado: <input type="number" class="form-control" [(ngModel)]="lado" name="lado" >
+  </div>
+  <div *ngIf="figura == 3">
+    <h3>Seleccionaste el Rectangulo por favor ingresa la siguiente informacion</h3>
+    base: <input type="number" class="form-control" [(ngModel)]="base" name="base" >
+    altura: <input type="number" class="form-control" [(ngModel)]="altura" name="altura" >
+  </div>
+  <div *ngIf="figura == 4">
+    <h3>Seleccionaste el Circulo por favor ingresa la siguiente informacion</h3>
+    Radio: <input type="number" class="form-control" [(ngModel)]="radio" name="radio" >
+  </div>
+  <button class="btn btn-primary" (click)="calcularFigura()"> Calcular </button>
+</form>
+<div *ngIf="nombre" class="alert alert-success">
+  La figura calculada es = {{nombre}}
+  El area es = {{area}}
+  el perimetro es = {{perimetro}}
+</div>
+
