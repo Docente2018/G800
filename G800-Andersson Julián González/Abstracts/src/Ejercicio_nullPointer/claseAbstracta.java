@@ -4,8 +4,6 @@
 package Ejercicio_nullPointer;
 
 /**
- *
- * @author andres
  */
 public class claseAbstracta {
 
