@@ -8,9 +8,9 @@
  *
  * @author ESTUDIANTE
  */
-public interface Extremos {
-    int min(int [] a);
-    int max(int [] a);
-    double min(double [] a);
-    double max(double [] a);
+public interface Vehiculo {
+    int velocidad_Maxima = 100;
+    
+    String Frenar(int valor);
+    String Acelerar(int valor);
 }
