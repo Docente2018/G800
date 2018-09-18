@@ -1,0 +1,7 @@
+c:\users\estudiante\source\repos\figonacci\figonacci\obj\Debug\figonacci.csprojAssemblyReference.cache
+c:\users\estudiante\source\repos\figonacci\figonacci\obj\Debug\figonacci.csproj.CoreCompileInputs.cache
+c:\users\estudiante\source\repos\figonacci\figonacci\bin\Debug\figonacci.exe.config
+c:\users\estudiante\source\repos\figonacci\figonacci\bin\Debug\figonacci.exe
+c:\users\estudiante\source\repos\figonacci\figonacci\bin\Debug\figonacci.pdb
+c:\users\estudiante\source\repos\figonacci\figonacci\obj\Debug\figonacci.exe
+c:\users\estudiante\source\repos\figonacci\figonacci\obj\Debug\figonacci.pdb
