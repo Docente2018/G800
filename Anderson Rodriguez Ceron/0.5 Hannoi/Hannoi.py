@@ -54,7 +54,7 @@ def run_hannoi(rings = 3):
     set_towers(rings)
     print(towers, '\n')
     print_tower()
-    move(rings, 0, 1, 2)
+    move(rings, 0, 2, 1)
 
 
 def main_menu():
@@ -68,6 +68,6 @@ def main_menu():
     except ValueError:
       print('\nSolo puede ingresar números\n')
   
-  run_hannoi(3)
+  run_hannoi(aros)
 
 main_menu()
