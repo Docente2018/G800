@@ -56,4 +56,18 @@ def run_hannoi(rings = 3):
     print_tower()
     move(rings, 0, 1, 2)
 
-run_hannoi(3)
+
+def main_menu():
+
+  flag = True
+  
+  while (flag):
+    try:
+      aros = int(input('\nPor favor seleccione el número de aros: '))
+      flag = False
+    except ValueError:
+      print('\nSolo puede ingresar números\n')
+  
+  run_hannoi(3)
+
+main_menu()
