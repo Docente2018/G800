@@ -1,0 +1,14 @@
+C:\Users\ESTUDIANTE\Desktop\TorresHanoi\TorresHanoi\bin\Debug\TorresHanoi.exe.config
+C:\Users\ESTUDIANTE\Desktop\TorresHanoi\TorresHanoi\bin\Debug\TorresHanoi.exe
+C:\Users\ESTUDIANTE\Desktop\TorresHanoi\TorresHanoi\bin\Debug\TorresHanoi.pdb
+C:\Users\ESTUDIANTE\Desktop\TorresHanoi\TorresHanoi\obj\Debug\TorresHanoi.csprojAssemblyReference.cache
+C:\Users\ESTUDIANTE\Desktop\TorresHanoi\TorresHanoi\obj\Debug\TorresHanoi.csproj.CoreCompileInputs.cache
+C:\Users\ESTUDIANTE\Desktop\TorresHanoi\TorresHanoi\obj\Debug\TorresHanoi.exe
+C:\Users\ESTUDIANTE\Desktop\TorresHanoi\TorresHanoi\obj\Debug\TorresHanoi.pdb
+C:\Users\Juan Andrés\Desktop\TorresHanoi\TorresHanoi\bin\Debug\TorresHanoi.exe.config
+C:\Users\Juan Andrés\Desktop\TorresHanoi\TorresHanoi\bin\Debug\TorresHanoi.exe
+C:\Users\Juan Andrés\Desktop\TorresHanoi\TorresHanoi\bin\Debug\TorresHanoi.pdb
+C:\Users\Juan Andrés\Desktop\TorresHanoi\TorresHanoi\obj\Debug\TorresHanoi.csprojAssemblyReference.cache
+C:\Users\Juan Andrés\Desktop\TorresHanoi\TorresHanoi\obj\Debug\TorresHanoi.csproj.CoreCompileInputs.cache
+C:\Users\Juan Andrés\Desktop\TorresHanoi\TorresHanoi\obj\Debug\TorresHanoi.exe
+C:\Users\Juan Andrés\Desktop\TorresHanoi\TorresHanoi\obj\Debug\TorresHanoi.pdb
