@@ -1,7 +1,7 @@
 rango = 0
 intentoLimite = 0
 
-def fibonacci()
+def fibonacci():
   if intentoLimite == 3:
     print "Excedio el limite de intentos"
     exit()
