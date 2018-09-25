@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<script>
+    console.log("HELLO");
+
+    //Se declaran los datos de los discos.
+    var arrayUno = [3,2,1];
+    var arrayDos = [];
+    var arrayTres = [];
+    //funcion para mover los discos recibe el arreglo donde esta y el arreglo destino
+    mover = function (arregloUno, arregloDos) {
+        // Se cuentan los campos que tienen cada arreglo
+        var cantUno = arregloUno.length;
+        var cant = arregloDos.length;
+        //Se valida si  el dato que se va a insertar no sea mayor a el ultimo dato que esta en el arreglo destino
+        if ((arregloDos[cant - 1] > arregloUno[cantUno - 1]) || arregloDos.length === 0) {
+            var popped = arregloUno.pop();
+            arregloDos.push(popped)
+            console.log(arrayUno);
+            console.log(arrayDos);
+            console.log(arrayTres);
+        } else {
+            console.log("es mayor");
+        }
+    };
+    //funcion para borrar el procceso;
+    borrar = function () {
+         arrayUno = [3, 2, 1];
+         arrayDos = [];
+         arrayTres = [];
+    }
+    //funcion para mostrar los datos
+    mostrar = function () {
+        console.log(arrayUno);
+        console.log(arrayDos);
+        console.log(arrayTres);
+    }
+</script>
+</html>
