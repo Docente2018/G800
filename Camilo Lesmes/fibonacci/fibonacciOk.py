@@ -1,7 +1,7 @@
 rango = 0
 intentoLimite = 0
 
-while rango < 1000000000000000000000000000000000000000000000000000000000000000000:
+while rango < 1:
 	try:
 		rango = input("Digite el rango: ")
 		rango = int(rango)
