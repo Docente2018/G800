@@ -3,7 +3,7 @@ intentoLimite = 0
 
 def fibonacci():
   if intentoLimite == 3:
-    print "Excedio el limite de intentos"
+    print("Excedio el limite de intentos")
     exit()
   while rango < 1:
     try:
@@ -21,5 +21,5 @@ def fibonacci():
     except:
         global intentoLimite 
         intentoLimite += 1  
-        print "Ingreso un caracter incorrecto, Debe ingresar un numero correcto"
+        print("Ingreso un caracter incorrecto, Debe ingresar un numero correcto")
 fibonacci()      
