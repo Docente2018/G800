@@ -37,7 +37,7 @@ public class Principal {
                 System.out.println("1)" + num1);
                 System.out.println("2)" + num2);
 
-                while ((num1 + num2) <= limite - 1) {
+                while (cont <= limite - 1) {
                     cont++;
                     tem = num1;
                     num1 = num2;
