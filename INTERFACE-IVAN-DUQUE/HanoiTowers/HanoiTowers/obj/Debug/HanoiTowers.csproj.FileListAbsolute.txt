@@ -1,0 +1,12 @@
+c:\users\administrator\documents\visual studio 2013\Projects\HanoiTowers\HanoiTowers\bin\Debug\HanoiTowers.exe.config
+c:\users\administrator\documents\visual studio 2013\Projects\HanoiTowers\HanoiTowers\obj\Debug\HanoiTowers.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Documents\Visual Studio 2013\Projects\HanoiTowers\HanoiTowers\bin\Debug\HanoiTowers.exe
+C:\Users\Administrator\Documents\Visual Studio 2013\Projects\HanoiTowers\HanoiTowers\bin\Debug\HanoiTowers.pdb
+C:\Users\Administrator\Documents\Visual Studio 2013\Projects\HanoiTowers\HanoiTowers\obj\Debug\HanoiTowers.exe
+C:\Users\Administrator\Documents\Visual Studio 2013\Projects\HanoiTowers\HanoiTowers\obj\Debug\HanoiTowers.pdb
+E:\HanoiTowers\HanoiTowers\bin\Debug\HanoiTowers.exe.config
+E:\HanoiTowers\HanoiTowers\obj\Debug\HanoiTowers.exe
+E:\HanoiTowers\HanoiTowers\obj\Debug\HanoiTowers.pdb
+E:\HanoiTowers\HanoiTowers\bin\Debug\HanoiTowers.exe
+E:\HanoiTowers\HanoiTowers\bin\Debug\HanoiTowers.pdb
+E:\HanoiTowers\HanoiTowers\obj\Debug\HanoiTowers.csprojResolveAssemblyReference.cache

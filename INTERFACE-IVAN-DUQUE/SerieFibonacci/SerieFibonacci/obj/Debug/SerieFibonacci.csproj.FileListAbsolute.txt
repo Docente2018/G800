@@ -1,0 +1,6 @@
+c:\users\administrator\documents\visual studio 2013\Projects\SerieFibonacci\SerieFibonacci\bin\Debug\SerieFibonacci.exe.config
+c:\users\administrator\documents\visual studio 2013\Projects\SerieFibonacci\SerieFibonacci\obj\Debug\SerieFibonacci.csprojResolveAssemblyReference.cache
+c:\users\administrator\documents\visual studio 2013\Projects\SerieFibonacci\SerieFibonacci\bin\Debug\SerieFibonacci.exe
+c:\users\administrator\documents\visual studio 2013\Projects\SerieFibonacci\SerieFibonacci\bin\Debug\SerieFibonacci.pdb
+c:\users\administrator\documents\visual studio 2013\Projects\SerieFibonacci\SerieFibonacci\obj\Debug\SerieFibonacci.exe
+c:\users\administrator\documents\visual studio 2013\Projects\SerieFibonacci\SerieFibonacci\obj\Debug\SerieFibonacci.pdb

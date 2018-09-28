@@ -1,0 +1,144 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      AREAS Y PERIMETROS
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div padding>
+    <ion-segment [(ngModel)]="pet">
+      <ion-segment-button value="TRIANGULO">
+        TRIANGULO
+      </ion-segment-button>
+      <ion-segment-button value="CUADRADO">
+        CUADRADO
+      </ion-segment-button>
+      <ion-segment-button value="RECTANGULO">
+        RECTANGULO
+      </ion-segment-button>
+      <ion-segment-button value="CIRCULO">
+        CIRCULO
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+  
+  <div [ngSwitch]="pet">
+    <ion-list *ngSwitchCase="'CUADRADO'">
+      <ion-item>
+        <ion-thumbnail item-start>
+          <img src="data:image/png;base64,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">
+        </ion-thumbnail>
+        <h2>CUADRADO</h2>
+      </ion-item>
+      <div align="center">
+        <br>
+        <h3>Calcular el area y perimetro del cuadrado</h3>
+        <br>
+        <form #form="ngForm" (ngSubmit)="calcularDatosCuadrado()" novalidate>
+          <ion-item>
+            <ion-label>Lado del cuadrado</ion-label>
+            <ion-input type="number" name="Lado" [(ngModel)]="Lado" required></ion-input>
+          </ion-item>
+          <button ion-button color="secondary" type="submit">Calcular</button>
+        </form>
+        <br>
+      </div>
+    </ion-list>
+  
+    <ion-list *ngSwitchCase="'TRIANGULO'">
+      <ion-item>
+        <ion-thumbnail item-start>
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxNbu6oa0sPn5XkoATBIffC4swYXvubrD8GBtvxGgVaChaMtY">
+        </ion-thumbnail>
+        <h2>TRIANGULO</h2>
+      </ion-item>
+      <div align="center">
+        <br>
+        <h3>Calcular el area y perimetro del triangulo</h3>
+        <br>
+        <form #form="ngForm" (ngSubmit)="calcularDatosTriangulo()" novalidate>
+          <ion-item>
+            <ion-label>Base</ion-label>
+            <ion-input type="number" name="baseTria" [(ngModel)]="objetoTriangulo.baseTria" required></ion-input>
+          </ion-item>
+        
+          <ion-item>
+            <ion-label>Altura</ion-label>
+            <ion-input type="number" name="alturaTria" [(ngModel)]="objetoTriangulo.alturaTria" required></ion-input>
+          </ion-item>
+  
+          <ion-item>
+            <ion-label>Lado A</ion-label>
+            <ion-input type="number" name="LadoA" [(ngModel)]="objetoTriangulo.LadoA" required></ion-input>
+          </ion-item>
+  
+          <ion-item>
+            <ion-label>Lado B</ion-label>
+            <ion-input type="number" name="LadoB" [(ngModel)]="objetoTriangulo.LadoB" required></ion-input>
+          </ion-item>
+  
+          <ion-item>
+            <ion-label>lado C</ion-label>
+            <ion-input type="number" name="LadoC" [(ngModel)]="objetoTriangulo.LadoC" required></ion-input>
+          </ion-item>
+          <button ion-button color="secondary" type="submit">Calcular</button>
+        </form>
+        <br>
+      </div>
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'RECTANGULO'">
+      <ion-item>
+        <ion-thumbnail item-start>
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEWds98ssXME0wrmSnK5mypzMxqrAaSQENjA74lZIsdkTaXDpOqA">
+        </ion-thumbnail>
+        <h2>RECTANGULO</h2>
+      </ion-item>
+      <div align="center">
+          <br>
+          <h3>Calcular el area y perimetro del rectangulo</h3>
+          <br>
+          <form #form="ngForm" (ngSubmit)="calcularDatosRectangulo()" novalidate>
+            <ion-item>
+              <ion-label>Base</ion-label>
+              <ion-input type="number" name="Radio" [(ngModel)]="rectanguloData.baseRecta" required></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label>Altura</ion-label>
+              <ion-input type="number" name="Radio" [(ngModel)]="rectanguloData.alturaRecta" required></ion-input>
+            </ion-item>
+            <button ion-button color="secondary" type="submit">Calcular</button>
+          </form>
+          <br>
+        </div>
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'CIRCULO'">
+      <ion-item>
+        <ion-thumbnail item-start>
+          <img src="data:image/png;base64,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">
+        </ion-thumbnail>
+        <h2>CIRCULO</h2>
+      </ion-item>
+      <div align="center">
+        <br>
+        <h3>Calcular el area y perimetro del circulo</h3>
+        <br>
+        <form #form="ngForm" (ngSubmit)="calcularDatosCirculo()" novalidate>
+          <ion-item>
+            <ion-label>Radio del circulo</ion-label>
+            <ion-input type="number" name="Radio" [(ngModel)]="Radio" required></ion-input>
+          </ion-item>
+          <button ion-button color="secondary" type="submit">Calcular</button>
+        </form>
+        <br>
+      </div>
+    </ion-list>
+  </div>
+  <div *ngIf="!pet" align="center">
+    <h1>CALCULAR AREA Y PERIMETROS DE FIGURAS GEOMETRICAS</h1>
+      <img width="400" height="400" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVZDw5w1FGX9lo4K4u7_7wQKpyv2AiZCKKzkufSOPCMUaajjVtUQ">
+  </div>
+</ion-content>
