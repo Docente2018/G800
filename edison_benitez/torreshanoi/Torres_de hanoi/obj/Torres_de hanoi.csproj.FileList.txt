@@ -1,0 +1,18 @@
+obj\Release\ResolveAssemblyReference.cache
+obj\Release\Torres_de_hanoi.Form1.resources
+obj\Release\Torres_de_hanoi.Form2.resources
+obj\Release\Torres_de_hanoi.Properties.Resources.resources
+obj\Release\Torres_de hanoi.csproj.GenerateResource.Cache
+bin\Release\Torres_de hanoi.exe
+bin\Release\Torres_de hanoi.pdb
+obj\Release\Torres_de hanoi.exe
+obj\Release\Torres_de hanoi.pdb
+bin\Debug\Torres_de hanoi.exe
+bin\Debug\Torres_de hanoi.pdb
+obj\Debug\ResolveAssemblyReference.cache
+obj\Debug\Torres_de_hanoi.Form1.resources
+obj\Debug\Torres_de_hanoi.Form2.resources
+obj\Debug\Torres_de_hanoi.Properties.Resources.resources
+obj\Debug\Torres_de hanoi.csproj.GenerateResource.Cache
+obj\Debug\Torres_de hanoi.exe
+obj\Debug\Torres_de hanoi.pdb

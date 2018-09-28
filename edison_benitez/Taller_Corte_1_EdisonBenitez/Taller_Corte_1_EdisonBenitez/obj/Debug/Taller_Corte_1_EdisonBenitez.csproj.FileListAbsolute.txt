@@ -1,0 +1,5 @@
+D:\Proyectos\GitHub\g800\Taller_Corte_1_EdisonBenitez\Taller_Corte_1_EdisonBenitez\bin\Debug\Taller_Corte_1_EdisonBenitez.exe.config
+D:\Proyectos\GitHub\g800\Taller_Corte_1_EdisonBenitez\Taller_Corte_1_EdisonBenitez\bin\Debug\Taller_Corte_1_EdisonBenitez.exe
+D:\Proyectos\GitHub\g800\Taller_Corte_1_EdisonBenitez\Taller_Corte_1_EdisonBenitez\bin\Debug\Taller_Corte_1_EdisonBenitez.pdb
+D:\Proyectos\GitHub\g800\Taller_Corte_1_EdisonBenitez\Taller_Corte_1_EdisonBenitez\obj\Debug\Taller_Corte_1_EdisonBenitez.exe
+D:\Proyectos\GitHub\g800\Taller_Corte_1_EdisonBenitez\Taller_Corte_1_EdisonBenitez\obj\Debug\Taller_Corte_1_EdisonBenitez.pdb

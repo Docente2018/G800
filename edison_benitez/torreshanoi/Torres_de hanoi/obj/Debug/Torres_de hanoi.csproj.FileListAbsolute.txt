@@ -1,0 +1,8 @@
+C:\Users\Fernando\Desktop\torreshanoi\Torres_de hanoi\obj\Debug\Torres_de hanoi.exe
+C:\Users\Fernando\Desktop\torreshanoi\Torres_de hanoi\obj\Debug\Torres_de hanoi.pdb
+C:\Users\Fernando\Desktop\torreshanoi\Torres_de hanoi\bin\Debug\Torres_de hanoi.exe
+C:\Users\Fernando\Desktop\torreshanoi\Torres_de hanoi\bin\Debug\Torres_de hanoi.pdb
+C:\Users\Fernando\Desktop\torreshanoi\Torres_de hanoi\obj\Debug\Torres_de hanoi.csprojResolveAssemblyReference.cache
+C:\Users\Fernando\Desktop\torreshanoi\Torres_de hanoi\obj\Debug\Torres_de_hanoi.Form1.resources
+C:\Users\Fernando\Desktop\torreshanoi\Torres_de hanoi\obj\Debug\Torres_de_hanoi.Properties.Resources.resources
+C:\Users\Fernando\Desktop\torreshanoi\Torres_de hanoi\obj\Debug\Torres_de hanoi.csproj.GenerateResource.Cache
