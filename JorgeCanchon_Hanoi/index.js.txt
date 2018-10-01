@@ -1,0 +1,17 @@
+console.log("Torres de Hanoi");
+var numDisks = 3
+MoveDisk(numDisks, 'A', 'C', 'B');
+
+function MoveDisk( NumDisks, SrcPeg, DestPeg, TempPeg)
+{
+  // This routine solves a single move with each call
+  if (NumDisks == 1)
+   console.log("Mueve disco de torre " + SrcPeg + " a torre " + DestPeg );
+  else
+  {
+   MoveDisk(NumDisks - 1, SrcPeg, TempPeg, DestPeg);
+  console.log("Mueve disco de torre" + SrcPeg + " a torre " + DestPeg);
+   MoveDisk(NumDisks - 1, TempPeg, DestPeg, SrcPeg);
+  }
+  return;
+}
