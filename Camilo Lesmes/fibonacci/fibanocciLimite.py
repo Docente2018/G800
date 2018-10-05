@@ -1,25 +1,25 @@
-rango = 0
-intentoLimite = 0
+intentos = 0
 
-def fibonacci():
-  if intentoLimite == 3:
-    print("Excedio el limite de intentos")
+def obtener():
+  if intentos == 3:
+    print("a excedido el numero de intentos")
     exit()
-  rango = 0
-  while(rango < 1):
-    try:
-      rango = input("Digite el rango: ")
-      for Sucesion in range(0,rango):
-        rango = int(rango)
-        valor1 = 1
-        valor2 = 0
-        valorFinal = 0
-        valorFinal = valor2
-        valor2 = valor1
-        valor1 = valorFinal + valor2
-        print(Sucesion,"--",valor1)
-    except:
-        global intentoLimite 
-        intentoLimite += 1  
-        print("Ingreso un caracter incorrecto, Debe ingresar un numero correcto")
-fibonacci()
+  valor1 = 1
+  valor2 = 0
+  valorFinal = 0
+  limite = 0
+  i = 0
+  try:
+    rango = input("Digite el rango: ")
+  except:
+    global intentos
+    intentos += 1
+    print("Ingrese un valor válido!!")
+    obterner()
+  for Sucesion in range(0,rango):
+    valorFinal = valor2
+    valor2 = valor1
+    valor1 = valorFinal + valor2
+    print(Sucesion,"--",valor1)
+    i += 1
+obtener()
