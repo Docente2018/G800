@@ -13,6 +13,7 @@ import java.util.Scanner;
  */
 public class Fibonacci {
     
+    // Metodo main     
     public static void main(String[] args) {
         
          Scanner sc = new Scanner(System.in);                  
@@ -58,6 +59,7 @@ public class Fibonacci {
                          }
                          else{
                              System.out.print("\nuno: "+contador);
+                             // Contador para el numero de errores                              
                              contador++;
                                 System.out.print("lea bien\n");
                                 if(contador == 3){
@@ -70,8 +72,10 @@ public class Fibonacci {
                     }
                     if(Integer.parseInt(selector) == 0){
                         System.out.print("\ndos: "+contador);
+                        // Contador para el numero de errores
                         contador++;
                         System.out.print("Hasta luego.\n");
+                      //bandera para validar el numero de errores, si es false se sale el codigo  
                       flag = false;
                     }
                    // else{
@@ -107,7 +111,7 @@ public class Fibonacci {
         }   
         
     }
-    
+    // Metodo que valida si la variable numero es un entero u otro tipo de dato    
     public static int ValidarNumero(String numero){       
         try {
          Integer.parseInt(numero);   
