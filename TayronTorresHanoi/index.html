@@ -1,0 +1,55 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="css/styles.css">
+        <script src="js/jquery-3.2.1.min.js"></script>
+        <script src="js/jquery-ui.min.js"></script>
+        <script src="js/javascript.js"></script>
+    </head>
+    <body>
+        <section class="tittle"> 
+                <h1>Torres De Hanoi</h1>
+        </section>
+        <section id="MensajeT" style="display:none" class="tittle"> 
+                <h1 id="Mensaje" style="font-size:30px"></h1>
+        </section>
+        <section class="container">
+           
+          <div class="">
+              <label>Numero Torres</label>
+              <input type="number" id="numberTorres" >
+              <input type="button" id="Iniciar" value="ingresar" >
+          </div>
+          <div >
+                <label>Numero Movimientos</label>
+                <p id="Movimiento" style="text-align:center;">0<p>
+            </div>
+        </section>
+        <section class="container">
+           <div  id="odp" class="box sortable1"  >
+             <div class="boxPalo ">
+             </div>
+             <div  id="torre1" class="boxItems">
+               
+             </div>
+           </div>
+           </div>
+           <div class="box sortable2">
+            <div class="boxPalo">
+
+            </div>
+            <div  id="torre2" class="boxItems"></div>
+             
+            </div>
+           </div>
+           <div  class="box sortable3" >
+            <div class="boxPalo">
+
+            </div>
+            <div  id="torre3" class="boxItems"></div>
+             
+            </div>
+            </div>
+
+        </section>
+    </body>
+</html>
