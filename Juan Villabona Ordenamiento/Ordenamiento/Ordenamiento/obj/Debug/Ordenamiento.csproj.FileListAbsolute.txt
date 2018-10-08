@@ -1,0 +1,7 @@
+C:\Users\ESTUDIANTE\Desktop\Juan Villabona Ordenamiento\Ordenamiento\Ordenamiento\bin\Debug\Ordenamiento.exe.config
+C:\Users\ESTUDIANTE\Desktop\Juan Villabona Ordenamiento\Ordenamiento\Ordenamiento\bin\Debug\Ordenamiento.exe
+C:\Users\ESTUDIANTE\Desktop\Juan Villabona Ordenamiento\Ordenamiento\Ordenamiento\bin\Debug\Ordenamiento.pdb
+C:\Users\ESTUDIANTE\Desktop\Juan Villabona Ordenamiento\Ordenamiento\Ordenamiento\obj\Debug\Ordenamiento.csprojAssemblyReference.cache
+C:\Users\ESTUDIANTE\Desktop\Juan Villabona Ordenamiento\Ordenamiento\Ordenamiento\obj\Debug\Ordenamiento.csproj.CoreCompileInputs.cache
+C:\Users\ESTUDIANTE\Desktop\Juan Villabona Ordenamiento\Ordenamiento\Ordenamiento\obj\Debug\Ordenamiento.exe
+C:\Users\ESTUDIANTE\Desktop\Juan Villabona Ordenamiento\Ordenamiento\Ordenamiento\obj\Debug\Ordenamiento.pdb
