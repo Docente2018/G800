@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Torre de hanoy</title>
+        <link rel="stylesheet" href="css/estilos.css">
+        <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+        <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+    </head>
+    <body>
+        <h1>Torre de Hanoy</h1>
+        <section id="container">
+            <form method="POST" enctype="multipart/form-data" id="formulario" >
+                <input type="text" name="nombre" id="nombre" placeholder="Nombre del participante" />
+                <input type="number" name="discos"  id="discos" placeholder="Numero de discos">
+                <input type="submit" name="enviar" id="enviar" value="Jugar" />
+            </form>
+            <secction class="escenario">
+                <div class="fila" id="fila-uno" ondrop="drop(event)" ondragover="allowDrop(event)">
+                     <div class="box" data-number="1" draggable="true" ondragstart="drag(event)" id="box-1">1</div>
+                     <div class="box" data-number="2" draggable="true" ondragstart="drag(event)" id="box-2">2</div>
+                     <div class="box" data-number="3" draggable="true" ondragstart="drag(event)" id="box-3">3</div>
+                     <!--<div class="box" data-number="4" draggable="true" ondragstart="drag(event)"></div>
+                     <div class="box" data-number="5" draggable="true" ondragstart="drag(event)"></div>
+                     <div class="box" data-number="6" draggable="true" ondragstart="drag(event)"></div>-->
+                </div>
+                <div class="fila" id="fila-dos" ondrop="drop(event)" ondragover="allowDrop(event)">
+                </div>
+               <!-- <div class="fila" id="fila-tres" ondrop="drop(event)" ondragover="allowDrop(event)">
+               </div>-->
+
+            </secction>
+        </section>
+        <script>
+        function allowDrop(ev) {
+            ev.preventDefault();
+        }
+
+        function drag(ev) {
+            ev.dataTransfer.setData("text", ev.target.id);
+        }
+
+        function drop(ev) {
+            ev.preventDefault();
+            var data = ev.dataTransfer.getData("text");
+            
+            ev.target.appendChild(document.getElementById(data));
+        }
+
+        </script>
+
+    </body>
+</html>
