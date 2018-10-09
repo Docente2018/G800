@@ -18,7 +18,7 @@ public class QuickSort {
     /**
      * Lista en la que se guardaran los numero ingresado por el usuario
      */
-    protected static List<Integer> listaInicial = new ArrayList();
+    protected static List<Integer> listaElementos = new ArrayList();
 
     /**
      * Metodo main para ejecucion de la clase
@@ -27,8 +27,12 @@ public class QuickSort {
      */
     public static void main(String[] args) {
         llenarLista(10);//lee 10 elementos
-        List<Integer> numeroOrdenados = quickSort(listaInicial);//almaceno los numero ordenados
-        imprimirLista(numeroOrdenados);//imprimo en consola los numero ya ordenados
+        System.out.println("Elementos Ingresados:");
+        imprimirLista(listaElementos);//imprimo la lista ingresada por el usuario sin ordenar
+        
+        quickSort(listaElementos);//almaceno los numero ordenados
+        System.out.println("Elementos Ordenados:");
+        imprimirLista(listaElementos);//imprimo en consola los numero ya ordenados
     }
 
     /**
@@ -38,23 +42,23 @@ public class QuickSort {
      */
     public static void llenarLista(int items) {
         boolean noSalir = true;//me indica si se seguira leyendo elementos del teclado
-        listaInicial.clear();//limpio la lista para no tener problemas de registros
+        listaElementos.clear();//limpio la lista para no tener problemas de registros
         Scanner teclado;//declaro un Scanner para la consola
         System.out.println("Ingrese 10 numero entero que desee ordenar");
         do {
             teclado = new Scanner(System.in);//refresco el scanner por problemas con el ciclo
-            if (listaInicial.size() >= items) {//establesco un limite de 10 elementos para leer, puede ser cambiado facilmente
+            if (listaElementos.size() >= items) {//establesco un limite de 10 elementos para leer, puede ser cambiado facilmente
                 noSalir = false;//indico que saldra de la lectura
             } else {
                 try {
                     System.out.print("Ingrese un numero: ");
-                    listaInicial.add(teclado.nextInt());//intento optener un numero entero
+                    listaElementos.add(teclado.nextInt());//intento optener un numero entero
                 } catch (java.util.InputMismatchException e) {//controlo cuando no se ingresa un numero entero
                     System.err.println("El valor ingresado no es valido.");
                 }
             }
-            System.out.println("");
         } while (noSalir);
+        System.out.println("");
     }
 
     /**
@@ -72,8 +76,8 @@ public class QuickSort {
     /**
      * Ordena de menor a mayor con QuickSort
      *
-     * @param entrada
-     * @return
+     * @param entrada lista a la cual se le ordenara sus elementos
+     * @return lista ordenada de los elementos iniciales
      */
     public static List<Integer> quickSort(List<Integer> entrada) {
         if (entrada.isEmpty()) {//si la lista llega vacia se a llegado al caso Base
