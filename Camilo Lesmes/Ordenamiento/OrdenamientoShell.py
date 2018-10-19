@@ -1,17 +1,28 @@
+# -*- coding:utf-8 -*-
+def ordenamientoDeShell(unaLista):
+    contadorSublistas = len(unaLista)//2
+    while contadorSublistas > 0:
 
-#Algoritmo de ordenamiento Shell
- 
-def shellsort (lista) : 
-  """Ordena la lista por metodo Shell, o ShellSort"""
-  incremento=len(lista)/2 
-  while (incremento>0) : 
-    for i in range(incremento,len(lista)) :
-      j=i 
-      temporal=lista[i] 
-	      while ( (j>=incremento) and (lista[j-incremento]>temporal) ) :  
-	        lista[j]=lista[j-incremento]
-	        j=j-incremento
-	      lista[j]=temporal 
-	    if (incremento==2) : incremento=1 
-	    else : incremento=int(incremento/2.2)
-	  return lista
+      for posicionInicio in range(contadorSublistas):
+        brechaOrdenamientoPorInsercion(unaLista,posicionInicio,contadorSublistas)
+
+      print("Después de los incrementos de tamaño",contadorSublistas,
+                                   "La lista es",unaLista)
+
+      contadorSublistas = contadorSublistas // 2
+
+def brechaOrdenamientoPorInsercion(unaLista,inicio,brecha):
+    for i in range(inicio+brecha,len(unaLista),brecha):
+
+        valorActual = unaLista[i]
+        posicion = i
+
+        while posicion>=brecha and unaLista[posicion-brecha]>valorActual:
+            unaLista[posicion]=unaLista[posicion-brecha]
+            posicion = posicion-brecha
+
+        unaLista[posicion]=valorActual
+
+unaLista = [54,26,93,17,77,31,44,55,20]
+ordenamientoDeShell(unaLista)
+print(unaLista)
