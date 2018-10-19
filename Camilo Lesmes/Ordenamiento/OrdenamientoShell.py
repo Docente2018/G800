@@ -6,8 +6,7 @@ def ordenamientoDeShell(unaLista):
       for posicionInicio in range(contadorSublistas):
         brechaOrdenamientoPorInsercion(unaLista,posicionInicio,contadorSublistas)
 
-      print("Después de los incrementos de tamaño",contadorSublistas,
-                                   "La lista es",unaLista)
+      print("el espacio",contadorSublistas,"La lista es",unaLista)
 
       contadorSublistas = contadorSublistas // 2
 
