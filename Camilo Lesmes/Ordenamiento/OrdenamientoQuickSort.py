@@ -1,33 +1,48 @@
-def quicksort(lista,izq,der):
-    i=izq
-    j=der
-    x=lista[(izq + der)/2]
- 
-    while( i <= j ):
-        while lista[i]<x and j<=der:
-            i=i+1
-        while x<lista[j] and j>izq:
-            j=j-1
-        if i<=j:
-            aux = lista[i]; lista[i] = lista[j]; lista[j] = aux;
-            i=i+1;  j=j-1;
- 
-        if izq < j:
-        quicksort( lista, izq, j );
-    if i < der:
-        quicksort( lista, i, der );
-def imprimeLista(lista,tam):
-    for i in range(0,tam):
-        print lista[i]
- 
-def leeLista():
-    lista=[]
-    cn=int(raw_input("Cantidad de numeros a ingresar: "))
- 
-    for i in range(0,cn):
-        lista.append(int(raw_input("Ingrese numero %d : " % i)))
-    return lista
- 
-A=leeLista()
-quicksort(A,0,len(A)-1)
-imprimeLista(A,len(A))
+# -*- coding:utf-8 -*-
+def quick_sort(A):
+    quick_sort2(A, 0, len(A)-1)
+    
+def quick_sort2(A, low, hi):
+    if hi-low < threshold and low < hi:
+        quick_selection(A, low, hi)
+    elif low < hi:
+        p = partition(A, low, hi)
+        quick_sort2(A, low, p - 1)
+        quick_sort2(A, p + 1, hi)
+    
+def get_pivot(A, low, hi):
+    mid = (hi + low) // 2
+    s = sorted([A[low], A[mid], A[hi]])
+    if s[1] == A[low]:
+        return low
+    elif s[1] == A[mid]:
+        return mid
+    return hi
+    
+def partition(A, low, hi):
+    pivotIndex = get_pivot(A, low, hi)
+    pivotValue = A[pivotIndex]
+    A[pivotIndex], A[low] = A[low], A[pivotIndex]
+    border = low
+
+    for i in range(low, hi+1):
+        if A[i] < pivotValue:
+            border += 1
+            A[i], A[border] = A[border], A[i]
+    A[low], A[border] = A[border], A[low]
+
+    return (border)
+    
+def quick_selection(x, first, last):
+    for i in range (first, last):
+        minIndex = i
+        for j in range (i+1, last+1):
+            if x[j] < x[minIndex]:
+                minIndex = j
+        if minIndex != i:
+            x[i], x[minIndex] = x[minIndex], x[i]
+            
+A = [5,9,1,2,4,8,6,3,7]
+print(A)
+quick_sort(A)
+print(A)
