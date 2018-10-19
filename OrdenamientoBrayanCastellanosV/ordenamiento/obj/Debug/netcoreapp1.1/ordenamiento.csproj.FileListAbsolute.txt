@@ -1,0 +1,9 @@
+C:\Users\USUARIO\Desktop\pyectPrueba\ordenamiento\ordenamiento\bin\Debug\netcoreapp1.1\ordenamiento.deps.json
+C:\Users\USUARIO\Desktop\pyectPrueba\ordenamiento\ordenamiento\bin\Debug\netcoreapp1.1\ordenamiento.runtimeconfig.json
+C:\Users\USUARIO\Desktop\pyectPrueba\ordenamiento\ordenamiento\bin\Debug\netcoreapp1.1\ordenamiento.runtimeconfig.dev.json
+C:\Users\USUARIO\Desktop\pyectPrueba\ordenamiento\ordenamiento\bin\Debug\netcoreapp1.1\ordenamiento.dll
+C:\Users\USUARIO\Desktop\pyectPrueba\ordenamiento\ordenamiento\bin\Debug\netcoreapp1.1\ordenamiento.pdb
+C:\Users\USUARIO\Desktop\pyectPrueba\ordenamiento\ordenamiento\obj\Debug\netcoreapp1.1\ordenamiento.csprojResolveAssemblyReference.cache
+C:\Users\USUARIO\Desktop\pyectPrueba\ordenamiento\ordenamiento\obj\Debug\netcoreapp1.1\ordenamiento.AssemblyInfo.cs
+C:\Users\USUARIO\Desktop\pyectPrueba\ordenamiento\ordenamiento\obj\Debug\netcoreapp1.1\ordenamiento.dll
+C:\Users\USUARIO\Desktop\pyectPrueba\ordenamiento\ordenamiento\obj\Debug\netcoreapp1.1\ordenamiento.pdb

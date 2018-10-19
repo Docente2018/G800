@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Torre de hanoy</title>
+        <link rel="stylesheet" href="css/estilos.css">
+        <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+        <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+    </head>
+    <body>
+        <h1>Torre de Hanoy</h1>
+        <section id="container">
+            
+            <!--formularo para capturar la cantidad de discos -->
+            <form method="POST" enctype="multipart/form-data" id="formulario" >
+                <input type="text" name="nombre" id="nombre" placeholder="Nombre del participante" />
+                <input type="number" name="discos"  id="discos" placeholder="Numero de discos">
+                <input type="submit" name="enviar" id="enviar" value="Jugar" />
+            </form>
+            
+            <!-- el esenario y las columnas de una 3 -->
+            <section class="escenario">
+                <div class="fila" id="fila-uno">
+
+                </div>
+                <div class="fila" id="fila-dos">
+                </div>
+                <div class="fila" id="fila-tres">
+                </div>
+            </section>
+        </section>
+        <script>
+            
+            /*
+            nomenclatura para ejecutar jquery de javascript
+            */
+            $(document).ready(function () {
+
+                //Metodo para capturar los datos del formulario
+                $('#formulario').submit(function (e) {
+                    e.preventDefault();
+                    $('#enviar').prop('disabled', true);
+                    //optener variables
+                    nombre = $("#nombre").val();
+                    discos = $("#discos").val();
+                    //for para agregar divs a la primera fila
+                    if (discos > 0) {
+                        for (var i = discos; i >= 1; i--) {
+
+                            $("#fila-uno").prepend("<div class='box' data-number='" + i + "'>" + i + "</div>");
+                        }
+                    }
+
+                    // Metodos para arrastrar los discos con el metodo de draggable de jquery y mouseover para detectar el evento del dragabñle
+                    $("div.fila").mouseover(function () {
+                        $(".box:nth-of-type(1)").draggable({revert: "invalid", cursor: 'move'});
+                    });
+                    
+                    //medoto drobppable para capturar lo que venga del drag
+                    $("#fila-uno").droppable(
+                            {
+                                accept: ".box",
+                                drop: function (ev, ui) {
+                                   //capturar el div drag
+                                    var item = $(ui.draggable);
+                                    //se optiene el valor del drag data-number
+                                    var itemPrueba = $(ui.draggable).attr('data-number');
+                                    //se captura el valor del div para validar
+                                    var prueba = $("#fila-uno > div:nth-of-type(1)").attr('data-number');
+                                    //se realiza la condicion para evaluar si se inserta el dibv o no permite
+                                    if (prueba > itemPrueba || typeof (prueba) === "undefined") {
+                                        $(this).prepend(item);
+                                    } else {
+                                        alert('Jugada invalida');
+                                    }
+
+                                }
+                            }
+                    );
+                     //medoto drobppable para capturar lo que venga del drag
+                    $("#fila-dos").droppable(
+                            {
+                                accept: ".box",
+                                drop: function (ev, ui) {
+                                    //var item = $(ui.draggable).attr('data-number');
+                                    var item = $(ui.draggable);
+                                    var itemPrueba = $(ui.draggable).attr('data-number');
+                                    var prueba = $("#fila-dos > div:nth-of-type(1)").attr('data-number');
+                                    if (prueba > itemPrueba || typeof (prueba) === "undefined") {
+                                        $(this).prepend(item);
+                                    } else {
+                                        alert('Jugada invalida');
+                                    }
+
+                                }
+                            }
+                    );
+                     //medoto drobppable para capturar lo que venga del drag
+                    $("#fila-tres").droppable(
+                            {
+                                accept: ".box",
+                                drop: function (ev, ui) {
+                                    //var item = $(ui.draggable).attr('data-number');
+                                    var item = $(ui.draggable);
+                                    var itemPrueba = $(ui.draggable).attr('data-number');
+                                    var prueba = $("#fila-tres > div:nth-of-type(1)").attr('data-number');
+                                    if (prueba > itemPrueba || typeof (prueba) === "undefined") {
+                                        $(this).prepend(item);
+                                    } else {
+                                        alert('Jugada invalida');
+                                    }
+
+                                }
+                            }
+                    );
+
+
+
+                });
+            });
+        </script>
+
+    </body>
+</html>
