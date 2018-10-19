@@ -2,41 +2,41 @@
 def quick_sort(A):
     quick_sort2(A, 0, len(A)-1)
     
-def quick_sort2(A, low, hi):
-    if hi-low < threshold and low < hi:
-        quick_selection(A, low, hi)
-    elif low < hi:
-        p = partition(A, low, hi)
-        quick_sort2(A, low, p - 1)
-        quick_sort2(A, p + 1, hi)
+def quick_sort2(A, bajo, alto):
+    if alto-bajo < threshold and bajo < alto:
+        quick_selection(A, bajo, alto)
+    elif bajo < alto:
+        p = partition(A, bajo, alto)
+        quick_sort2(A, bajo, p - 1)
+        quick_sort2(A, p + 1, alto)
     
-def get_pivot(A, low, hi):
-    mid = (hi + low) // 2
-    s = sorted([A[low], A[mid], A[hi]])
-    if s[1] == A[low]:
-        return low
+def obternerPivote(A, bajo, alto):
+    mid = (alto + bajo) // 2
+    s = sorted([A[bajo], A[mid], A[alto]])
+    if s[1] == A[bajo]:
+        return bajo
     elif s[1] == A[mid]:
         return mid
-    return hi
+    return alto
     
-def partition(A, low, hi):
-    pivotIndex = get_pivot(A, low, hi)
-    pivotValue = A[pivotIndex]
-    A[pivotIndex], A[low] = A[low], A[pivotIndex]
-    border = low
+def partition(A, bajo, alto):
+    pivotIndex = obternerPivote(A, bajo, alto)
+    ValorPivote = A[pivotIndex]
+    A[pivotIndex], A[bajo] = A[bajo], A[pivotIndex]
+    border = bajo
 
-    for i in range(low, hi+1):
-        if A[i] < pivotValue:
+    for i in range(bajo, alto+1):
+        if A[i] < ValorPivote:
             border += 1
             A[i], A[border] = A[border], A[i]
-    A[low], A[border] = A[border], A[low]
+    A[bajo], A[border] = A[border], A[bajo]
 
     return (border)
     
-def quick_selection(x, first, last):
-    for i in range (first, last):
+def quick_selection(x, primero, final):
+    for i in range (primero, final):
         minIndex = i
-        for j in range (i+1, last+1):
+        for j in range (i+1, final+1):
             if x[j] < x[minIndex]:
                 minIndex = j
         if minIndex != i:
