@@ -34,7 +34,7 @@ public class Insertion {
             //recorremos con otro for para ubicar si el temporal es mayor que los otrs números
             for (int j = i - 1; j >= 0 && array[j] > aux; j--) {
                 array[j + 1] = array[j];
-                
+                //cambia el valor del temporal por el que se esta recorriendo
                 array[j] = aux;
             }
         }
