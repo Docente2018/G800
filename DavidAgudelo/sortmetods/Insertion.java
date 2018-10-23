@@ -16,13 +16,13 @@ public class Insertion {
   public static void main(String[] args) {
       Insertion insertion = new Insertion();
       //crea la cadena
-      int[] nums = {5, 8, 69, 9, 33, 65, 45, 19, 43, 62, 71};
+      int[] nums = {87, 8, 69, 9, 33, 65, 45, 19, 43, 62, 71};
       //lamamos el método que ordena
-      int[] insertion = insertion.Insercion(nums);
+      int[] insertionCad = insertion.ordenarInsercion(nums);
       //recorremos el array
-      for (int i = 0; i < ordenarInsercion.length; i++) {
+      for (int i = 0; i < insertionCad.length; i++) {
           //Imprimimos la cadena
-          System.out.println(ordenarInsercion[i]);
+          System.out.println(insertionCad[i]);
       }
   }
    public int[] ordenarInsercion(int[] array) {
