@@ -16,7 +16,9 @@ public class QuickSort {
     int from = a;
     int to = b;
     int pivot = matrix[(from+to)/2];
+        //Se ejecuta el siguiente codigo hasta
     do{
+        // el codigo se divide en dos
         while(matrix[from] < pivot){
             from++;
         }
@@ -29,7 +31,7 @@ public class QuickSort {
             matrix[to] = buf;
             from++; to--;
         }
-    }while(from <= to);
+    }while(from <= to);//Se repite siempre que from sea menor o igual que destino
     if(a < to){
         Rapido(matrix, a, to);
     }
@@ -37,4 +39,26 @@ public class QuickSort {
         Rapido(matrix, from, b);
     }
 } 
+    
+    public static void main(String[] args) {
+        // Variable entera que guarda la longitud del arreglo
+        int longitud;
+        // Declaración de scanner
+        Scanner oscanner = new Scanner(System.in);
+        System.out.println("Ordenamiento Quick Sort");
+        System.out.println("Ingrese el tamaño de la cadena");
+        longitud = oscanner.nextInt();
+        int[] numeros = new int[longitud];
+        Random rnd = new Random();
+        for (int i = 0; i < numeros.length; i++) {
+            numeros[i] = rnd.nextInt(50);
+            System.out.print(numeros[i] + " ");
+        }   
+        // Envia los parametros al metodo para ordenarlos
+        QuickSortClass.quickSort(numeros, 0, numeros.length - 1);
+        for (int n : numeros) {
+            System.out.print(n + " ");
+        }
+
+    }
 }
