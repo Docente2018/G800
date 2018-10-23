@@ -1,4 +1,5 @@
 import math
+import random
 
 class HeapSort:
 
@@ -68,13 +69,20 @@ class HeapSort:
 
     def leeLista(self):
         lista = []
-        cn = int(input("Cantidad de numeros a ingresar: "))
-
+        cn = int(input("Cantidad de numeros a ingresar: "))                  
         for i in range(0, cn):
-            lista.append(int(input("Ingrese numero %d : " % (i+1))))
+            #lista.append(int(input("Ingrese numero %d : " % (i+1))))
+            lista.append(self.randomArray())        
+        print("Lista desordenada: ", lista)
+        print("\n")
         return lista
 
+    def randomArray(self):
+      return random.randrange(1,1000)
+
+
     def ejecutarQuickSort(self):
+
         a = self.leeLista()
         f = self.heapSortAlgo(a)
         print("Ordenado", f)
