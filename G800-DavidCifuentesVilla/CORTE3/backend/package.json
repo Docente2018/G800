@@ -1,0 +1,20 @@
+{
+  "name": "apt-rest-node.js",
+  "version": "1.0.0",
+  "description": "ApiRest Uninpahu",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "author": "David Cifuentes",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "mongoose": "^5.3.8"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.5"
+  }
+}
