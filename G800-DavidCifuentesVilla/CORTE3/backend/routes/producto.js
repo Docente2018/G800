@@ -6,8 +6,12 @@ var ProductoController = require('../controllers/producto');
 var router = express.Router();
 
 //para el objeto creado genero las rutas que desee y las referencio a cada uno de las fuction correspondientes en el controlador
-router.get('/home', ProductoController.home);
-router.post('/test', ProductoController.test);
-router.post('/save-producto', ProductoController.saveProducto);
+router.get('/producto/home', ProductoController.home);
+router.post('/producto/test', ProductoController.test);
+router.post('/producto/save-producto', ProductoController.saveProducto);
+router.get('/producto/:id?', ProductoController.getProducto);
+router.get('/productos', ProductoController.getProductos);
+router.put('/producto/:id', ProductoController.updateProducto);
+router.delete('/producto/:id', ProductoController.deleteProducto);
 
 module.exports = router;

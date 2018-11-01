@@ -7,8 +7,7 @@ var ProductoSchema = Schema({
     estado: Number,
     nombre: String,
     precio: Number,
-    cantidad: Number,
-    id: Number
+    cantidad: Number
 });
 
 //Exporto mediante mongoose.model en donde referencio a que collection realacion y que Schema usa

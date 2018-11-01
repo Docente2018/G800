@@ -14,8 +14,8 @@ app.use(bodyParser.urlencoded({extended:false}));
 app.use(bodyParser.json());
 
 //Crear Ruta Generar producto seguido de las rutas contenidas en el archivo de rutas
-app.use('/producto', producto_routes);
-app.use('/',general_routes);
+app.use('/appfinal', producto_routes);
+// app.use('/',general_routes);
 
 //Exportar mediante module.export para poder acceder a mi objeto app en todo el projecto
 module.exports = app;
