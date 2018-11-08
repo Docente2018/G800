@@ -1,6 +1,5 @@
 //Creo un objeto de tipo model producto o Schema
 var Producto = require('../models/producto');
-
 //Para la variable controller defino cada fuction correspondiente a la url deseada, y en cada una de ellas defino la logica requerida
 var controller = {
     home: function(req, res){
@@ -19,6 +18,7 @@ var controller = {
 
         //creo la variable params el cual recibe el cuerpo de la solicitud
         var params = req.body;
+        console.log(params);
 
         //Lleno mi objeto producto de tipo Schema campo a campo
         producto.estado = params.estado;
@@ -43,14 +43,14 @@ var controller = {
         Producto.findById(productoId, (err, producto)=>{
             if(err) return res.status(500).send({message: 'Error en devolver datos.'});
             if(!producto) return res.status(409).send({message: 'Producto Buscado No Existe'});
-            return res.status(200).send({producto});
+            return res.status(200).send(producto);
         });
     },
     getProductos: function(req, res){
         Producto.find({},(err, productos)=>{
             if(err) return res.status(500).send({message: 'Error al devolver los datos. '});
             if(!productos) return res.status(409).send({message: 'No hay datos a listar.'});
-            return res.status(200).send({productos});
+            return res.status(200).send(productos);
         })
     },
     updateProducto: function(req, res){
