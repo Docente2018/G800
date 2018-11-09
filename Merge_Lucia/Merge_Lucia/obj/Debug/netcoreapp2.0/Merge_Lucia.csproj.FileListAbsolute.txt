@@ -1,0 +1,10 @@
+C:\Users\ESTUDIANTE\Documents\Merge_Lucia\Merge_Lucia\bin\Debug\netcoreapp2.0\Merge_Lucia.deps.json
+C:\Users\ESTUDIANTE\Documents\Merge_Lucia\Merge_Lucia\bin\Debug\netcoreapp2.0\Merge_Lucia.runtimeconfig.json
+C:\Users\ESTUDIANTE\Documents\Merge_Lucia\Merge_Lucia\bin\Debug\netcoreapp2.0\Merge_Lucia.runtimeconfig.dev.json
+C:\Users\ESTUDIANTE\Documents\Merge_Lucia\Merge_Lucia\bin\Debug\netcoreapp2.0\Merge_Lucia.dll
+C:\Users\ESTUDIANTE\Documents\Merge_Lucia\Merge_Lucia\bin\Debug\netcoreapp2.0\Merge_Lucia.pdb
+C:\Users\ESTUDIANTE\Documents\Merge_Lucia\Merge_Lucia\obj\Debug\netcoreapp2.0\Merge_Lucia.csproj.CoreCompileInputs.cache
+C:\Users\ESTUDIANTE\Documents\Merge_Lucia\Merge_Lucia\obj\Debug\netcoreapp2.0\Merge_Lucia.AssemblyInfoInputs.cache
+C:\Users\ESTUDIANTE\Documents\Merge_Lucia\Merge_Lucia\obj\Debug\netcoreapp2.0\Merge_Lucia.AssemblyInfo.cs
+C:\Users\ESTUDIANTE\Documents\Merge_Lucia\Merge_Lucia\obj\Debug\netcoreapp2.0\Merge_Lucia.dll
+C:\Users\ESTUDIANTE\Documents\Merge_Lucia\Merge_Lucia\obj\Debug\netcoreapp2.0\Merge_Lucia.pdb

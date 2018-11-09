@@ -1,0 +1,282 @@
+{
+	"id": "04a10218-616b-1bb1-df3f-d93d2cf61dd7",
+	"name": "Backend Uninpahu Corte3",
+	"description": "",
+	"order": [
+		"aa9eb384-2d6f-a8cc-ac6e-c7a6542b44d6",
+		"65e4a8fb-42ed-be80-907f-d37040c53c46",
+		"b15c07bd-ff5b-a7a9-4cf4-d9dac14cbed3",
+		"614522a0-b703-d8df-4e1a-82b40934a374",
+		"542ee4d7-42c5-b28b-eb99-796dbf52c747",
+		"2e99cdd0-dccf-1a6a-4445-b24aa903d209",
+		"7215faa6-ed4a-b2e9-c27a-7c1ed95627a7"
+	],
+	"folders": [],
+	"folders_order": [],
+	"timestamp": 1540990879692,
+	"owner": "5756484",
+	"public": false,
+	"requests": [
+		{
+			"id": "2e99cdd0-dccf-1a6a-4445-b24aa903d209",
+			"headers": "Content-Type: application/x-www-form-urlencoded\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/x-www-form-urlencoded",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:3000/appfinal/productos",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": [
+				{
+					"key": "nombre",
+					"value": "Camiseta",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "urlencoded",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1541074683453,
+			"name": "Get List Productos",
+			"description": "",
+			"collectionId": "04a10218-616b-1bb1-df3f-d93d2cf61dd7",
+			"responses": []
+		},
+		{
+			"id": "542ee4d7-42c5-b28b-eb99-796dbf52c747",
+			"headers": "",
+			"headerData": [],
+			"url": "http://localhost:3000/appfinal/producto/5bdae5596f54cf1a125ee6b5",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1541074691137,
+			"name": "Busca por ID Get MongoDB",
+			"description": "",
+			"collectionId": "04a10218-616b-1bb1-df3f-d93d2cf61dd7",
+			"responses": []
+		},
+		{
+			"id": "614522a0-b703-d8df-4e1a-82b40934a374",
+			"headers": "Content-Type: application/x-www-form-urlencoded\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/x-www-form-urlencoded",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:3000/appfinal/producto/save-producto",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "estado",
+					"value": "2",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "nombre",
+					"value": "Pantalon",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "precio",
+					"value": "500000",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "cantidad",
+					"value": "10",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "urlencoded",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1541074746890,
+			"name": "Post Producto Save",
+			"description": "",
+			"collectionId": "04a10218-616b-1bb1-df3f-d93d2cf61dd7",
+			"responses": []
+		},
+		{
+			"id": "65e4a8fb-42ed-be80-907f-d37040c53c46",
+			"headers": "",
+			"headerData": [],
+			"url": "http://localhost:3000/postmanPost/1234?data=PruebaData",
+			"queryParams": [
+				{
+					"key": "data",
+					"value": "PruebaData",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "nombre",
+					"value": "David",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "apellido",
+					"value": "Cifuentes",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "urlencoded",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1540992888231,
+			"name": "Postman Prueba Post",
+			"description": "",
+			"collectionId": "04a10218-616b-1bb1-df3f-d93d2cf61dd7",
+			"responses": []
+		},
+		{
+			"id": "7215faa6-ed4a-b2e9-c27a-7c1ed95627a7",
+			"headers": "Content-Type: application/x-www-form-urlencoded\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/x-www-form-urlencoded",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:3000/appfinal/producto/5bdae5596f54cf1a125ee6b5",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "PUT",
+			"collectionId": "04a10218-616b-1bb1-df3f-d93d2cf61dd7",
+			"data": [
+				{
+					"key": "estado",
+					"value": "2",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "nombre",
+					"value": "Camiseta",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "precio",
+					"value": "500000",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "cantidad",
+					"value": "30",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "urlencoded",
+			"name": "PUT Producto Update",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1541075744819,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {}
+		},
+		{
+			"id": "aa9eb384-2d6f-a8cc-ac6e-c7a6542b44d6",
+			"headers": "",
+			"headerData": [],
+			"url": "http://localhost:3000/postmanGet",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1540991116756,
+			"name": "Postman Prueba Get",
+			"description": "",
+			"collectionId": "04a10218-616b-1bb1-df3f-d93d2cf61dd7",
+			"responses": []
+		},
+		{
+			"id": "b15c07bd-ff5b-a7a9-4cf4-d9dac14cbed3",
+			"headers": "",
+			"headerData": [],
+			"url": "http://localhost:3000/home",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "GET",
+			"collectionId": "04a10218-616b-1bb1-df3f-d93d2cf61dd7",
+			"data": null,
+			"dataMode": "params",
+			"name": "Get Home Controller Router",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1541017855029,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {}
+		}
+	]
+}

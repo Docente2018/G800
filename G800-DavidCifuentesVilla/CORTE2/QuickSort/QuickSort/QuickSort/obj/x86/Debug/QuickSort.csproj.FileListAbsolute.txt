@@ -4,3 +4,9 @@
 /home/david/Documentos/Proyectos/Uninpahu/Programacion/G800/G800-DavidCifuentesVilla/CORTE2/QuickSort/QuickSort/QuickSort/obj/x86/Debug/QuickSort.csproj.CoreCompileInputs.cache
 /home/david/Documentos/Proyectos/Uninpahu/Programacion/G800/G800-DavidCifuentesVilla/CORTE2/QuickSort/QuickSort/QuickSort/obj/x86/Debug/QuickSort.exe
 /home/david/Documentos/Proyectos/Uninpahu/Programacion/G800/G800-DavidCifuentesVilla/CORTE2/QuickSort/QuickSort/QuickSort/obj/x86/Debug/QuickSort.pdb
+/home/david/Documentos/Uninpahu/Programacion/G800/G800-DavidCifuentesVilla/CORTE2/QuickSort/QuickSort/QuickSort/bin/Debug/QuickSort.exe
+/home/david/Documentos/Uninpahu/Programacion/G800/G800-DavidCifuentesVilla/CORTE2/QuickSort/QuickSort/QuickSort/bin/Debug/QuickSort.pdb
+/home/david/Documentos/Uninpahu/Programacion/G800/G800-DavidCifuentesVilla/CORTE2/QuickSort/QuickSort/QuickSort/obj/x86/Debug/QuickSort.csprojResolveAssemblyReference.cache
+/home/david/Documentos/Uninpahu/Programacion/G800/G800-DavidCifuentesVilla/CORTE2/QuickSort/QuickSort/QuickSort/obj/x86/Debug/QuickSort.csproj.CoreCompileInputs.cache
+/home/david/Documentos/Uninpahu/Programacion/G800/G800-DavidCifuentesVilla/CORTE2/QuickSort/QuickSort/QuickSort/obj/x86/Debug/QuickSort.exe
+/home/david/Documentos/Uninpahu/Programacion/G800/G800-DavidCifuentesVilla/CORTE2/QuickSort/QuickSort/QuickSort/obj/x86/Debug/QuickSort.pdb

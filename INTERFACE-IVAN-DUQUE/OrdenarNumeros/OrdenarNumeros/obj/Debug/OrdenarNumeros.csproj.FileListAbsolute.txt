@@ -1,0 +1,12 @@
+c:\users\administrator\documents\visual studio 2013\Projects\OrdenarNumeros\OrdenarNumeros\bin\Debug\OrdenarNumeros.exe.config
+c:\users\administrator\documents\visual studio 2013\Projects\OrdenarNumeros\OrdenarNumeros\obj\Debug\OrdenarNumeros.csprojResolveAssemblyReference.cache
+c:\users\administrator\documents\visual studio 2013\Projects\OrdenarNumeros\OrdenarNumeros\bin\Debug\OrdenarNumeros.exe
+c:\users\administrator\documents\visual studio 2013\Projects\OrdenarNumeros\OrdenarNumeros\bin\Debug\OrdenarNumeros.pdb
+c:\users\administrator\documents\visual studio 2013\Projects\OrdenarNumeros\OrdenarNumeros\obj\Debug\OrdenarNumeros.exe
+c:\users\administrator\documents\visual studio 2013\Projects\OrdenarNumeros\OrdenarNumeros\obj\Debug\OrdenarNumeros.pdb
+E:\MATERIAL\MATERIAL-ESTUDIO\ProjectsOwn\OrdenarNumeros\OrdenarNumeros\bin\Debug\OrdenarNumeros.exe.config
+E:\MATERIAL\MATERIAL-ESTUDIO\ProjectsOwn\OrdenarNumeros\OrdenarNumeros\obj\Debug\OrdenarNumeros.exe
+E:\MATERIAL\MATERIAL-ESTUDIO\ProjectsOwn\OrdenarNumeros\OrdenarNumeros\obj\Debug\OrdenarNumeros.pdb
+E:\MATERIAL\MATERIAL-ESTUDIO\ProjectsOwn\OrdenarNumeros\OrdenarNumeros\obj\Debug\OrdenarNumeros.csprojResolveAssemblyReference.cache
+E:\MATERIAL\MATERIAL-ESTUDIO\ProjectsOwn\OrdenarNumeros\OrdenarNumeros\bin\Debug\OrdenarNumeros.exe
+E:\MATERIAL\MATERIAL-ESTUDIO\ProjectsOwn\OrdenarNumeros\OrdenarNumeros\bin\Debug\OrdenarNumeros.pdb

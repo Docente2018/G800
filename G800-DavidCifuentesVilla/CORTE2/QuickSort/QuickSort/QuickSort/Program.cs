@@ -8,14 +8,14 @@ namespace QuickSort
         {
 			Console.Write("Digite cual sera la longitud del vector");
 			int Longitud = Int32.Parse(Console.ReadLine());
-			QuickSort qs = new QuickSort(Longitud);
+			Ordenamiento qs = new Ordenamiento(Longitud);
         }
     }
-	class QuickSort{
+	class Ordenamiento{
 		int LongL;
 		int[] Vector;
 
-		public QuickSort(int Long){
+		public Ordenamiento(int Long){
 			LongL = Long;
 			Vector = new int[LongL];
 			for (int i = 0; i < LongL; i++)
@@ -23,10 +23,21 @@ namespace QuickSort
                 Console.Write("Ingresa el valor {0}: ", i + 1);
 				Vector[i] = Int32.Parse(Console.ReadLine());
             }
-			Organizar(Vector, 0, LongL - 1);
+			Console.Write("Digita que metodo de ordenamiento deseas 1-QuicSort, 2-ShellSort");
+			int metodo = Int32.Parse(Console.ReadLine());
+
+			if(metodo == 1){
+			    QuickSort(Vector, 0, LongL - 1);
+			}
+			else{
+				if(metodo == 2){
+					ShellSort(Vector);
+				}
+			}
+           
 			Mostrar();
 		}
-		private void Organizar(int [] vector, int primero, int ultimo){
+		private void QuickSort(int [] vector, int primero, int ultimo){
 			int pri = primero;
 			int ult = ultimo;
 			int cen;
@@ -34,8 +45,10 @@ namespace QuickSort
 			double pivote = vector[cen];
 			do
 			{
-				while (vector[pri] < pivote) pri++;
-				while (vector[ult] > pivote) ult--;
+				while (vector[pri] < pivote) 
+					pri++;
+				while (vector[ult] > pivote) 
+					ult--;
 				if(pri <= ult){
 					int temp;
 					temp = vector[pri];
@@ -47,16 +60,36 @@ namespace QuickSort
 			}
 			while (pri <= ult);
 			if(primero < ult){
-				Organizar(vector, primero, ult);
+				QuickSort(vector, primero, ult);
 			}
 			if(pri < ultimo){
-				Organizar(vector, pri, ultimo);
+				QuickSort(vector, pri, ultimo);
 			}
 		}
 		private void Mostrar(){
 			Console.Write("Este es el Vector");
 			for (int i = 0; i < LongL; i++){
 				Console.Write("{0} ", Vector[i]);
+			}
+		}
+
+		private void ShellSort(int [] vector){
+			int salto, aux, i;
+			Boolean cambio;
+			//Para el manejo del metodo shell se debe tomar la longitud del vector 
+			for (salto = vector.Length / 2; salto != 0;salto/=2){
+				cambio = true;
+				while(cambio){
+					cambio = false;
+					for (i = salto; i < vector.Length; i++){
+						if(vector[i-salto]>vector[i]){
+							aux = vector[i];
+							vector[i] = vector[i - salto];
+							vector[i - salto] = aux;
+							cambio = true;
+						}
+					}
+				}
 			}
 		}
 	}
