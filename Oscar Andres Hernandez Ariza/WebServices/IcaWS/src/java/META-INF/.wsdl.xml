@@ -1,0 +1,1357 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://microsoft.com/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" targetNamespace="http://microsoft.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Web Service para insertar constancias fitosanitarias con mas de un producto</wsdl:documentation>
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://microsoft.com/">
+      <s:element name="consultarTrasportadoras">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="usuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="contrasena" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ip_equipo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="consultarTrasportadorasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="consultarTrasportadorasResult" type="tns:ArrayOfVO_VE_TRANSPORTADORA" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfVO_VE_TRANSPORTADORA">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="VO_VE_TRANSPORTADORA" nillable="true" type="tns:VO_VE_TRANSPORTADORA" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="VO_VE_TRANSPORTADORA">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="id_transportadora" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="nombre" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="nit_transportadora" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="resultadoConsulta" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="consultarDestinatarios">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Numero_identificacion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="usuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="contrasena" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ip_equipo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="consultarDestinatariosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="consultarDestinatariosResult" type="tns:ArrayOfVO_VE_EXPORTADOR_DESTINATARIO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfVO_VE_EXPORTADOR_DESTINATARIO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="VO_VE_EXPORTADOR_DESTINATARIO" nillable="true" type="tns:VO_VE_EXPORTADOR_DESTINATARIO" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="VO_VE_EXPORTADOR_DESTINATARIO">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="id_destinatario" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="nombre" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="resultadoConsulta" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="consultarPaises">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id_destinatario" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="usuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="contrasena" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ip_equipo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="consultarPaisesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="consultarPaisesResult" type="tns:ArrayOfVO_PAISES" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfVO_PAISES">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="VO_PAISES" nillable="true" type="tns:VO_PAISES" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="VO_PAISES">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="id_pais" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="nombre" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="resultadoConsulta" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="consultarPuertosdeEntrada">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id_Pais" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="usuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="contrasena" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ip_equipo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="consultarPuertosdeEntradaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="consultarPuertosdeEntradaResult" type="tns:ArrayOfVO_VE_PUERTOS_DE_ENTRADA" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfVO_VE_PUERTOS_DE_ENTRADA">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="VO_VE_PUERTOS_DE_ENTRADA" nillable="true" type="tns:VO_VE_PUERTOS_DE_ENTRADA" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="VO_VE_PUERTOS_DE_ENTRADA">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="id_puerto" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="nombre_puerto" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="resultado_consulta" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="consultarCultivos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Numero_identificacion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="usuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="contraseña" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ip_equipo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="consultarCultivosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="consultarCultivosResult" type="tns:ArrayOfVO_VE_EXPORTADOR_CULTIVO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfVO_VE_EXPORTADOR_CULTIVO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="VO_VE_EXPORTADOR_CULTIVO" nillable="true" type="tns:VO_VE_EXPORTADOR_CULTIVO" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="VO_VE_EXPORTADOR_CULTIVO">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="id_cultivo" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="nombre" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="resultadoConsulta" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="consultarPuertos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="usuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="contraseña" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ip_equipo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="consultarPuertosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="consultarPuertosResult" type="tns:ArrayOfVO_PUERTOS" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfVO_PUERTOS">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="VO_PUERTOS" nillable="true" type="tns:VO_PUERTOS" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="VO_PUERTOS">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="id_puerto" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="descripcion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="resultadoConsulta" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="consultarImportadoresExportadores">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Numero_identificacion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="usuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="contraseña" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ip_equipo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="consultarImportadoresExportadoresResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="consultarImportadoresExportadoresResult" type="tns:ArrayOfVO_IMPORTADORESEXPORTADORES" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfVO_IMPORTADORESEXPORTADORES">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="VO_IMPORTADORESEXPORTADORES" nillable="true" type="tns:VO_IMPORTADORESEXPORTADORES" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="VO_IMPORTADORESEXPORTADORES">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="id_importadorExportador" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="nombre" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="resultadoConsulta" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="consultarEspecies">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="usuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="contraseña" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ip_equipo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="consultarEspeciesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="consultarEspeciesResult" type="tns:ArrayOfVO_ESPECIES_O_PRODUCTOS_AGRICOLAS" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfVO_ESPECIES_O_PRODUCTOS_AGRICOLAS">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="VO_ESPECIES_O_PRODUCTOS_AGRICOLAS" nillable="true" type="tns:VO_ESPECIES_O_PRODUCTOS_AGRICOLAS" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="VO_ESPECIES_O_PRODUCTOS_AGRICOLAS">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="presentaciones" type="tns:ArrayOfVO_IV_PRESENTACIONES" />
+          <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="descripcion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="resultadoConsulta" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfVO_IV_PRESENTACIONES">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="VO_IV_PRESENTACIONES" nillable="true" type="tns:VO_IV_PRESENTACIONES" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="VO_IV_PRESENTACIONES">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="id_presentacion" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="presentacion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="resultado_consulta" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="consultarAsistentesTecnicosPorCultivos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id_cultivo" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="usuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="contraseña" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ip_equipo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="consultarAsistentesTecnicosPorCultivosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="consultarAsistentesTecnicosPorCultivosResult" type="tns:ArrayOfVO_VE_ASISTENTE_TECNICO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfVO_VE_ASISTENTE_TECNICO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="VO_VE_ASISTENTE_TECNICO" nillable="true" type="tns:VO_VE_ASISTENTE_TECNICO" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="VO_VE_ASISTENTE_TECNICO">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="id_asistente" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="nombre" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="cedula" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="resultadoConsulta" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="consultarDestinatarios_Paises">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="numero_identificacion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="usuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="contraseña" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ip_equipo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="consultarDestinatarios_PaisesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="consultarDestinatarios_PaisesResult" type="tns:ArrayOfVO_DEST_PAIS" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfVO_DEST_PAIS">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="VO_DEST_PAIS" nillable="true" type="tns:VO_DEST_PAIS" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="VO_DEST_PAIS">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="id_destinatario" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="nombre_destinatario" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="listaPaises" type="tns:ArrayOfVO_PAISES" />
+          <s:element minOccurs="0" maxOccurs="1" name="resultadoConsulta" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="consultarExportadorCultivos_Productos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="numero_identificacion" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="id_especie" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="usuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="contrasena" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ip_equipo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="consultarExportadorCultivos_ProductosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="consultarExportadorCultivos_ProductosResult" type="tns:ArrayOfVO_EXPCULTIVO_ASIST_PROD" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfVO_EXPCULTIVO_ASIST_PROD">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="VO_EXPCULTIVO_ASIST_PROD" nillable="true" type="tns:VO_EXPCULTIVO_ASIST_PROD" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="VO_EXPCULTIVO_ASIST_PROD">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="id_cultivos" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="nombre_cultivo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="resultado_prueba" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="listaAsistenes" type="tns:ArrayOfVO_VE_ASISTENTE_TECNICO" />
+          <s:element minOccurs="0" maxOccurs="1" name="listaProductos" type="tns:ArrayOfVO_ESPECIES_O_PRODUCTOS_AGRICOLAS" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="consultarAerolineas">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="usuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="contrasena" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ip_equipo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="consultarAerolineasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="consultarAerolineasResult" type="tns:ArrayOfVO_AEROLINEA" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfVO_AEROLINEA">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="VO_AEROLINEA" nillable="true" type="tns:VO_AEROLINEA" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="VO_AEROLINEA">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="id_Aerolinea" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Aerolinea" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="resultadoConsulta" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="consultarAsistentesComercialesPorExportador">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Numero_identificacion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="usuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="contraseña" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ip_equipo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="consultarAsistentesComercialesPorExportadorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="consultarAsistentesComercialesPorExportadorResult" type="tns:ArrayOfVO_ASISTENTE_COMERCIAL" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfVO_ASISTENTE_COMERCIAL">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="VO_ASISTENTE_COMERCIAL" nillable="true" type="tns:VO_ASISTENTE_COMERCIAL" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="VO_ASISTENTE_COMERCIAL">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="id_asistente_comercial" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="nombre_asistente" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="apellido_asistente" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="cedula" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="tarjeta_profesional" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="direccion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="telefono" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="fax" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="correo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="resultadoConsulta" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="consultarProductosPorEspecies">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id_especie" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="id_cultivo" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="id_imp_exp" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="usuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="contraseña" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ip_equipo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="consultarProductosPorEspeciesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="consultarProductosPorEspeciesResult" type="tns:ArrayOfVO_ESPECIES_O_PRODUCTOS_AGRICOLAS" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="consultarUnidadesMedida">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="usuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="contraseña" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ip_equipo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="consultarUnidadesMedidaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="consultarUnidadesMedidaResult" type="tns:ArrayOfVO_UNIDAD_MEDIDA" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfVO_UNIDAD_MEDIDA">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="VO_UNIDAD_MEDIDA" nillable="true" type="tns:VO_UNIDAD_MEDIDA" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="VO_UNIDAD_MEDIDA">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="id_unidadMedida" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="descripcion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="resultadoConsulta" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="consultarEmpaques">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="usuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="contraseña" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ip_equipo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="consultarEmpaquesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="consultarEmpaquesResult" type="tns:ArrayOfVO_EMPAQUES" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfVO_EMPAQUES">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="VO_EMPAQUES" nillable="true" type="tns:VO_EMPAQUES" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="VO_EMPAQUES">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="id_Empaques" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="descripcion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="resultadoConsulta" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="consultar_Presentaciones">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="usuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="contrasena" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ip_equipo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="id_imp_exp" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="id_producto" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="consultar_PresentacionesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="consultar_PresentacionesResult" type="tns:ArrayOfVO_IV_PRESENTACIONES" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="crear_nueva_Costancia">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="datosConstancia" type="tns:VO_AUTORIZACION_FITOSANITARIA" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="VO_AUTORIZACION_FITOSANITARIA">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="id_importador_exportador" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="fecha" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="id_destinatario" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="id_pais" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="id_puertos_de_entrada" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="id_transportadora" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="guia_aerea" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="fecha_despacho" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="fecha_validez_desde" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="fecha_validez_hasta" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="id_especie" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="id_puertos" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="bouquets" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="num_bouquets" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="n_identificacion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="usuario" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="contrasena" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ip_equipo" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="id_aerolinea" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="id_asistente_comercial" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="detallesConstancia" type="tns:ArrayOfVO_VE_AUT_FITO_DETALLES" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfVO_VE_AUT_FITO_DETALLES">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="VO_VE_AUT_FITO_DETALLES" nillable="true" type="tns:VO_VE_AUT_FITO_DETALLES" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="VO_VE_AUT_FITO_DETALLES">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="id_cultivo" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="id_asistente" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="id_producto" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="det_cantidadUnidades" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="id_uMedida" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="id_empaque" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="det_cantidadEmpaques" type="s:float" />
+          <s:element minOccurs="1" maxOccurs="1" name="det_valorFOB" type="s:float" />
+          <s:element minOccurs="1" maxOccurs="1" name="id_presentacion" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="crear_nueva_CostanciaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="crear_nueva_CostanciaResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CrearConstanciaEstadosUnidos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="datos" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CrearConstanciaEstadosUnidosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CrearConstanciaEstadosUnidosResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CrearCertificacionEstadosUnidos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="datos" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CrearCertificacionEstadosUnidosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CrearCertificacionEstadosUnidosResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CrearNuevaConstanciaEstadosUnidos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="constancia" type="tns:VO_AUTORIZACION_FITOSANITARIA" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CrearNuevaConstanciaEstadosUnidosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CrearNuevaConstanciaEstadosUnidosResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CrearNuevaCertificacionEstadosUnidos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="constancia" type="tns:VO_AUTORIZACION_FITOSANITARIA" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CrearNuevaCertificacionEstadosUnidosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CrearNuevaCertificacionEstadosUnidosResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="crearCostancia_desdeXML">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="datos" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="crearCostancia_desdeXMLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="crearCostancia_desdeXMLResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="imprimirConstancia">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="usuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="contraseña" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ip_equipo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="id_costancia" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="imprimirConstanciaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="imprimirConstanciaResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="consultarTrasportadorasSoapIn">
+    <wsdl:part name="parameters" element="tns:consultarTrasportadoras" />
+  </wsdl:message>
+  <wsdl:message name="consultarTrasportadorasSoapOut">
+    <wsdl:part name="parameters" element="tns:consultarTrasportadorasResponse" />
+  </wsdl:message>
+  <wsdl:message name="consultarDestinatariosSoapIn">
+    <wsdl:part name="parameters" element="tns:consultarDestinatarios" />
+  </wsdl:message>
+  <wsdl:message name="consultarDestinatariosSoapOut">
+    <wsdl:part name="parameters" element="tns:consultarDestinatariosResponse" />
+  </wsdl:message>
+  <wsdl:message name="consultarPaisesSoapIn">
+    <wsdl:part name="parameters" element="tns:consultarPaises" />
+  </wsdl:message>
+  <wsdl:message name="consultarPaisesSoapOut">
+    <wsdl:part name="parameters" element="tns:consultarPaisesResponse" />
+  </wsdl:message>
+  <wsdl:message name="consultarPuertosdeEntradaSoapIn">
+    <wsdl:part name="parameters" element="tns:consultarPuertosdeEntrada" />
+  </wsdl:message>
+  <wsdl:message name="consultarPuertosdeEntradaSoapOut">
+    <wsdl:part name="parameters" element="tns:consultarPuertosdeEntradaResponse" />
+  </wsdl:message>
+  <wsdl:message name="consultarCultivosSoapIn">
+    <wsdl:part name="parameters" element="tns:consultarCultivos" />
+  </wsdl:message>
+  <wsdl:message name="consultarCultivosSoapOut">
+    <wsdl:part name="parameters" element="tns:consultarCultivosResponse" />
+  </wsdl:message>
+  <wsdl:message name="consultarPuertosSoapIn">
+    <wsdl:part name="parameters" element="tns:consultarPuertos" />
+  </wsdl:message>
+  <wsdl:message name="consultarPuertosSoapOut">
+    <wsdl:part name="parameters" element="tns:consultarPuertosResponse" />
+  </wsdl:message>
+  <wsdl:message name="consultarImportadoresExportadoresSoapIn">
+    <wsdl:part name="parameters" element="tns:consultarImportadoresExportadores" />
+  </wsdl:message>
+  <wsdl:message name="consultarImportadoresExportadoresSoapOut">
+    <wsdl:part name="parameters" element="tns:consultarImportadoresExportadoresResponse" />
+  </wsdl:message>
+  <wsdl:message name="consultarEspeciesSoapIn">
+    <wsdl:part name="parameters" element="tns:consultarEspecies" />
+  </wsdl:message>
+  <wsdl:message name="consultarEspeciesSoapOut">
+    <wsdl:part name="parameters" element="tns:consultarEspeciesResponse" />
+  </wsdl:message>
+  <wsdl:message name="consultarAsistentesTecnicosPorCultivosSoapIn">
+    <wsdl:part name="parameters" element="tns:consultarAsistentesTecnicosPorCultivos" />
+  </wsdl:message>
+  <wsdl:message name="consultarAsistentesTecnicosPorCultivosSoapOut">
+    <wsdl:part name="parameters" element="tns:consultarAsistentesTecnicosPorCultivosResponse" />
+  </wsdl:message>
+  <wsdl:message name="consultarDestinatarios_PaisesSoapIn">
+    <wsdl:part name="parameters" element="tns:consultarDestinatarios_Paises" />
+  </wsdl:message>
+  <wsdl:message name="consultarDestinatarios_PaisesSoapOut">
+    <wsdl:part name="parameters" element="tns:consultarDestinatarios_PaisesResponse" />
+  </wsdl:message>
+  <wsdl:message name="consultarExportadorCultivos_ProductosSoapIn">
+    <wsdl:part name="parameters" element="tns:consultarExportadorCultivos_Productos" />
+  </wsdl:message>
+  <wsdl:message name="consultarExportadorCultivos_ProductosSoapOut">
+    <wsdl:part name="parameters" element="tns:consultarExportadorCultivos_ProductosResponse" />
+  </wsdl:message>
+  <wsdl:message name="consultarAerolineasSoapIn">
+    <wsdl:part name="parameters" element="tns:consultarAerolineas" />
+  </wsdl:message>
+  <wsdl:message name="consultarAerolineasSoapOut">
+    <wsdl:part name="parameters" element="tns:consultarAerolineasResponse" />
+  </wsdl:message>
+  <wsdl:message name="consultarAsistentesComercialesPorExportadorSoapIn">
+    <wsdl:part name="parameters" element="tns:consultarAsistentesComercialesPorExportador" />
+  </wsdl:message>
+  <wsdl:message name="consultarAsistentesComercialesPorExportadorSoapOut">
+    <wsdl:part name="parameters" element="tns:consultarAsistentesComercialesPorExportadorResponse" />
+  </wsdl:message>
+  <wsdl:message name="consultarProductosPorEspeciesSoapIn">
+    <wsdl:part name="parameters" element="tns:consultarProductosPorEspecies" />
+  </wsdl:message>
+  <wsdl:message name="consultarProductosPorEspeciesSoapOut">
+    <wsdl:part name="parameters" element="tns:consultarProductosPorEspeciesResponse" />
+  </wsdl:message>
+  <wsdl:message name="consultarUnidadesMedidaSoapIn">
+    <wsdl:part name="parameters" element="tns:consultarUnidadesMedida" />
+  </wsdl:message>
+  <wsdl:message name="consultarUnidadesMedidaSoapOut">
+    <wsdl:part name="parameters" element="tns:consultarUnidadesMedidaResponse" />
+  </wsdl:message>
+  <wsdl:message name="consultarEmpaquesSoapIn">
+    <wsdl:part name="parameters" element="tns:consultarEmpaques" />
+  </wsdl:message>
+  <wsdl:message name="consultarEmpaquesSoapOut">
+    <wsdl:part name="parameters" element="tns:consultarEmpaquesResponse" />
+  </wsdl:message>
+  <wsdl:message name="consultar_PresentacionesSoapIn">
+    <wsdl:part name="parameters" element="tns:consultar_Presentaciones" />
+  </wsdl:message>
+  <wsdl:message name="consultar_PresentacionesSoapOut">
+    <wsdl:part name="parameters" element="tns:consultar_PresentacionesResponse" />
+  </wsdl:message>
+  <wsdl:message name="crear_nueva_CostanciaSoapIn">
+    <wsdl:part name="parameters" element="tns:crear_nueva_Costancia" />
+  </wsdl:message>
+  <wsdl:message name="crear_nueva_CostanciaSoapOut">
+    <wsdl:part name="parameters" element="tns:crear_nueva_CostanciaResponse" />
+  </wsdl:message>
+  <wsdl:message name="CrearConstanciaEstadosUnidosSoapIn">
+    <wsdl:part name="parameters" element="tns:CrearConstanciaEstadosUnidos" />
+  </wsdl:message>
+  <wsdl:message name="CrearConstanciaEstadosUnidosSoapOut">
+    <wsdl:part name="parameters" element="tns:CrearConstanciaEstadosUnidosResponse" />
+  </wsdl:message>
+  <wsdl:message name="CrearCertificacionEstadosUnidosSoapIn">
+    <wsdl:part name="parameters" element="tns:CrearCertificacionEstadosUnidos" />
+  </wsdl:message>
+  <wsdl:message name="CrearCertificacionEstadosUnidosSoapOut">
+    <wsdl:part name="parameters" element="tns:CrearCertificacionEstadosUnidosResponse" />
+  </wsdl:message>
+  <wsdl:message name="CrearNuevaConstanciaEstadosUnidosSoapIn">
+    <wsdl:part name="parameters" element="tns:CrearNuevaConstanciaEstadosUnidos" />
+  </wsdl:message>
+  <wsdl:message name="CrearNuevaConstanciaEstadosUnidosSoapOut">
+    <wsdl:part name="parameters" element="tns:CrearNuevaConstanciaEstadosUnidosResponse" />
+  </wsdl:message>
+  <wsdl:message name="CrearNuevaCertificacionEstadosUnidosSoapIn">
+    <wsdl:part name="parameters" element="tns:CrearNuevaCertificacionEstadosUnidos" />
+  </wsdl:message>
+  <wsdl:message name="CrearNuevaCertificacionEstadosUnidosSoapOut">
+    <wsdl:part name="parameters" element="tns:CrearNuevaCertificacionEstadosUnidosResponse" />
+  </wsdl:message>
+  <wsdl:message name="crearCostancia_desdeXMLSoapIn">
+    <wsdl:part name="parameters" element="tns:crearCostancia_desdeXML" />
+  </wsdl:message>
+  <wsdl:message name="crearCostancia_desdeXMLSoapOut">
+    <wsdl:part name="parameters" element="tns:crearCostancia_desdeXMLResponse" />
+  </wsdl:message>
+  <wsdl:message name="imprimirConstanciaSoapIn">
+    <wsdl:part name="parameters" element="tns:imprimirConstancia" />
+  </wsdl:message>
+  <wsdl:message name="imprimirConstanciaSoapOut">
+    <wsdl:part name="parameters" element="tns:imprimirConstanciaResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WS_COSTANCIASSoap">
+    <wsdl:operation name="consultarTrasportadoras">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Devuelve la lista de transportadoras</wsdl:documentation>
+      <wsdl:input message="tns:consultarTrasportadorasSoapIn" />
+      <wsdl:output message="tns:consultarTrasportadorasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarDestinatarios">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Devuelve la lista de Destinatarios asociados al Exportador</wsdl:documentation>
+      <wsdl:input message="tns:consultarDestinatariosSoapIn" />
+      <wsdl:output message="tns:consultarDestinatariosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarPaises">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Devuelve la lista de Paises asociados al Destinatario</wsdl:documentation>
+      <wsdl:input message="tns:consultarPaisesSoapIn" />
+      <wsdl:output message="tns:consultarPaisesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarPuertosdeEntrada">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Devuelve la lista de Puertos de Entrada asociados al País</wsdl:documentation>
+      <wsdl:input message="tns:consultarPuertosdeEntradaSoapIn" />
+      <wsdl:output message="tns:consultarPuertosdeEntradaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarCultivos">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Devuelve la lista de Cultivos Asociados al Exportador</wsdl:documentation>
+      <wsdl:input message="tns:consultarCultivosSoapIn" />
+      <wsdl:output message="tns:consultarCultivosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarPuertos">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Devuelve la lista de Puertos disponibles</wsdl:documentation>
+      <wsdl:input message="tns:consultarPuertosSoapIn" />
+      <wsdl:output message="tns:consultarPuertosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarImportadoresExportadores">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Devuelve los datos del Exportador</wsdl:documentation>
+      <wsdl:input message="tns:consultarImportadoresExportadoresSoapIn" />
+      <wsdl:output message="tns:consultarImportadoresExportadoresSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarEspecies">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Devuele la lista de las Especies agrícolas disponibles</wsdl:documentation>
+      <wsdl:input message="tns:consultarEspeciesSoapIn" />
+      <wsdl:output message="tns:consultarEspeciesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarAsistentesTecnicosPorCultivos">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Devuelve la lista de los Asistentes tecnicos asociados al Exportador</wsdl:documentation>
+      <wsdl:input message="tns:consultarAsistentesTecnicosPorCultivosSoapIn" />
+      <wsdl:output message="tns:consultarAsistentesTecnicosPorCultivosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarDestinatarios_Paises">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Devuelve la lista de Destinatarios y Paises asociados al Exportador</wsdl:documentation>
+      <wsdl:input message="tns:consultarDestinatarios_PaisesSoapIn" />
+      <wsdl:output message="tns:consultarDestinatarios_PaisesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarExportadorCultivos_Productos">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Devuelve la lista de Cultivos y Productos Asociados al Exportador</wsdl:documentation>
+      <wsdl:input message="tns:consultarExportadorCultivos_ProductosSoapIn" />
+      <wsdl:output message="tns:consultarExportadorCultivos_ProductosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarAerolineas">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Devuelve la lista de Aerolineas</wsdl:documentation>
+      <wsdl:input message="tns:consultarAerolineasSoapIn" />
+      <wsdl:output message="tns:consultarAerolineasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarAsistentesComercialesPorExportador">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Devuelve los datos de los asitentes comerciales asociados al exportador</wsdl:documentation>
+      <wsdl:input message="tns:consultarAsistentesComercialesPorExportadorSoapIn" />
+      <wsdl:output message="tns:consultarAsistentesComercialesPorExportadorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarProductosPorEspecies">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Devuelve la lista de los Productos asociados a las especies</wsdl:documentation>
+      <wsdl:input message="tns:consultarProductosPorEspeciesSoapIn" />
+      <wsdl:output message="tns:consultarProductosPorEspeciesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarUnidadesMedida">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Devuelve la lista de Unidades de medida disponibles</wsdl:documentation>
+      <wsdl:input message="tns:consultarUnidadesMedidaSoapIn" />
+      <wsdl:output message="tns:consultarUnidadesMedidaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarEmpaques">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Devuele la lista de Empaques disponibles</wsdl:documentation>
+      <wsdl:input message="tns:consultarEmpaquesSoapIn" />
+      <wsdl:output message="tns:consultarEmpaquesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="consultar_Presentaciones">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Devuele la lista de Presentaciones disponibles</wsdl:documentation>
+      <wsdl:input message="tns:consultar_PresentacionesSoapIn" />
+      <wsdl:output message="tns:consultar_PresentacionesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="crear_nueva_Costancia">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Crea una nueva solicitud fitosanitaria</wsdl:documentation>
+      <wsdl:input message="tns:crear_nueva_CostanciaSoapIn" />
+      <wsdl:output message="tns:crear_nueva_CostanciaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CrearConstanciaEstadosUnidos">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Crea una nueva constancia para Estados Unidos</wsdl:documentation>
+      <wsdl:input message="tns:CrearConstanciaEstadosUnidosSoapIn" />
+      <wsdl:output message="tns:CrearConstanciaEstadosUnidosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CrearCertificacionEstadosUnidos">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Crea una nueva certificación para Estados Unidos</wsdl:documentation>
+      <wsdl:input message="tns:CrearCertificacionEstadosUnidosSoapIn" />
+      <wsdl:output message="tns:CrearCertificacionEstadosUnidosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CrearNuevaConstanciaEstadosUnidos">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Crea una nueva constancia para Estados Unidos</wsdl:documentation>
+      <wsdl:input message="tns:CrearNuevaConstanciaEstadosUnidosSoapIn" />
+      <wsdl:output message="tns:CrearNuevaConstanciaEstadosUnidosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CrearNuevaCertificacionEstadosUnidos">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Crea una nueva certificación para Estados Unidos</wsdl:documentation>
+      <wsdl:input message="tns:CrearNuevaCertificacionEstadosUnidosSoapIn" />
+      <wsdl:output message="tns:CrearNuevaCertificacionEstadosUnidosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="crearCostancia_desdeXML">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Crea una nueva o varias solicitudes fitosanitarias a partir de un archivo XML</wsdl:documentation>
+      <wsdl:input message="tns:crearCostancia_desdeXMLSoapIn" />
+      <wsdl:output message="tns:crearCostancia_desdeXMLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="imprimirConstancia">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Metodo que devuelve un arreglo de Bytes de la Constancia Fitosanitaria</wsdl:documentation>
+      <wsdl:input message="tns:imprimirConstanciaSoapIn" />
+      <wsdl:output message="tns:imprimirConstanciaSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WS_COSTANCIASSoap" type="tns:WS_COSTANCIASSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="consultarTrasportadoras">
+      <soap:operation soapAction="http://microsoft.com/consultarTrasportadoras" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarDestinatarios">
+      <soap:operation soapAction="http://microsoft.com/consultarDestinatarios" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarPaises">
+      <soap:operation soapAction="http://microsoft.com/consultarPaises" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarPuertosdeEntrada">
+      <soap:operation soapAction="http://microsoft.com/consultarPuertosdeEntrada" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarCultivos">
+      <soap:operation soapAction="http://microsoft.com/consultarCultivos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarPuertos">
+      <soap:operation soapAction="http://microsoft.com/consultarPuertos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarImportadoresExportadores">
+      <soap:operation soapAction="http://microsoft.com/consultarImportadoresExportadores" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarEspecies">
+      <soap:operation soapAction="http://microsoft.com/consultarEspecies" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarAsistentesTecnicosPorCultivos">
+      <soap:operation soapAction="http://microsoft.com/consultarAsistentesTecnicosPorCultivos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarDestinatarios_Paises">
+      <soap:operation soapAction="http://microsoft.com/consultarDestinatarios_Paises" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarExportadorCultivos_Productos">
+      <soap:operation soapAction="http://microsoft.com/consultarExportadorCultivos_Productos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarAerolineas">
+      <soap:operation soapAction="http://microsoft.com/consultarAerolineas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarAsistentesComercialesPorExportador">
+      <soap:operation soapAction="http://microsoft.com/consultarAsistentesComercialesPorExportador" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarProductosPorEspecies">
+      <soap:operation soapAction="http://microsoft.com/consultarProductosPorEspecies" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarUnidadesMedida">
+      <soap:operation soapAction="http://microsoft.com/consultarUnidadesMedida" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarEmpaques">
+      <soap:operation soapAction="http://microsoft.com/consultarEmpaques" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultar_Presentaciones">
+      <soap:operation soapAction="http://microsoft.com/consultar_Presentaciones" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="crear_nueva_Costancia">
+      <soap:operation soapAction="http://microsoft.com/crear_nueva_Costancia" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CrearConstanciaEstadosUnidos">
+      <soap:operation soapAction="http://microsoft.com/CrearConstanciaEstadosUnidos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CrearCertificacionEstadosUnidos">
+      <soap:operation soapAction="http://microsoft.com/CrearCertificacionEstadosUnidos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CrearNuevaConstanciaEstadosUnidos">
+      <soap:operation soapAction="http://microsoft.com/CrearNuevaConstanciaEstadosUnidos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CrearNuevaCertificacionEstadosUnidos">
+      <soap:operation soapAction="http://microsoft.com/CrearNuevaCertificacionEstadosUnidos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="crearCostancia_desdeXML">
+      <soap:operation soapAction="http://microsoft.com/crearCostancia_desdeXML" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="imprimirConstancia">
+      <soap:operation soapAction="http://microsoft.com/imprimirConstancia" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WS_COSTANCIASSoap12" type="tns:WS_COSTANCIASSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="consultarTrasportadoras">
+      <soap12:operation soapAction="http://microsoft.com/consultarTrasportadoras" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarDestinatarios">
+      <soap12:operation soapAction="http://microsoft.com/consultarDestinatarios" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarPaises">
+      <soap12:operation soapAction="http://microsoft.com/consultarPaises" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarPuertosdeEntrada">
+      <soap12:operation soapAction="http://microsoft.com/consultarPuertosdeEntrada" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarCultivos">
+      <soap12:operation soapAction="http://microsoft.com/consultarCultivos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarPuertos">
+      <soap12:operation soapAction="http://microsoft.com/consultarPuertos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarImportadoresExportadores">
+      <soap12:operation soapAction="http://microsoft.com/consultarImportadoresExportadores" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarEspecies">
+      <soap12:operation soapAction="http://microsoft.com/consultarEspecies" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarAsistentesTecnicosPorCultivos">
+      <soap12:operation soapAction="http://microsoft.com/consultarAsistentesTecnicosPorCultivos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarDestinatarios_Paises">
+      <soap12:operation soapAction="http://microsoft.com/consultarDestinatarios_Paises" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarExportadorCultivos_Productos">
+      <soap12:operation soapAction="http://microsoft.com/consultarExportadorCultivos_Productos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarAerolineas">
+      <soap12:operation soapAction="http://microsoft.com/consultarAerolineas" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarAsistentesComercialesPorExportador">
+      <soap12:operation soapAction="http://microsoft.com/consultarAsistentesComercialesPorExportador" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarProductosPorEspecies">
+      <soap12:operation soapAction="http://microsoft.com/consultarProductosPorEspecies" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarUnidadesMedida">
+      <soap12:operation soapAction="http://microsoft.com/consultarUnidadesMedida" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarEmpaques">
+      <soap12:operation soapAction="http://microsoft.com/consultarEmpaques" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultar_Presentaciones">
+      <soap12:operation soapAction="http://microsoft.com/consultar_Presentaciones" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="crear_nueva_Costancia">
+      <soap12:operation soapAction="http://microsoft.com/crear_nueva_Costancia" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CrearConstanciaEstadosUnidos">
+      <soap12:operation soapAction="http://microsoft.com/CrearConstanciaEstadosUnidos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CrearCertificacionEstadosUnidos">
+      <soap12:operation soapAction="http://microsoft.com/CrearCertificacionEstadosUnidos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CrearNuevaConstanciaEstadosUnidos">
+      <soap12:operation soapAction="http://microsoft.com/CrearNuevaConstanciaEstadosUnidos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CrearNuevaCertificacionEstadosUnidos">
+      <soap12:operation soapAction="http://microsoft.com/CrearNuevaCertificacionEstadosUnidos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="crearCostancia_desdeXML">
+      <soap12:operation soapAction="http://microsoft.com/crearCostancia_desdeXML" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="imprimirConstancia">
+      <soap12:operation soapAction="http://microsoft.com/imprimirConstancia" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WS_COSTANCIAS">
+    <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Web Service para insertar constancias fitosanitarias con mas de un producto</wsdl:documentation>
+    <wsdl:port name="WS_COSTANCIASSoap" binding="tns:WS_COSTANCIASSoap">
+      <soap:address location="http://pruebas-webservices.ica.gov.co:83/wsCostanciasICA/WS_COSTANCIAS.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WS_COSTANCIASSoap12" binding="tns:WS_COSTANCIASSoap12">
+      <soap12:address location="http://pruebas-webservices.ica.gov.co:83/wsCostanciasICA/WS_COSTANCIAS.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="https://www.w3schools.com/xml/tempconvert.asmx?WSDL" uri="xml-resources/web-service-references/tempconvert/wsdl/www.w3schools.com/xml/tempconvert.asmx.wsdl"/>
+    <system systemId="http://www.dneonline.com/calculator.asmx?WSDL" uri="wsdl/www.dneonline.com/calculator.asmx.wsdl"/>
+</catalog>

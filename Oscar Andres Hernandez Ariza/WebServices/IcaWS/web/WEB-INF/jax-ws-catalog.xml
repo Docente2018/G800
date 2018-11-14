@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="http://pruebas-webservices.ica.gov.co:83/wsCostanciasICA/?wsdl" uri="src/conf/xml-resources/web-service-references/WsClient/wsdl/pruebas-webservices.ica.gov.co_83/wsCostanciasICA/.wsdl"/>
+</catalog>
