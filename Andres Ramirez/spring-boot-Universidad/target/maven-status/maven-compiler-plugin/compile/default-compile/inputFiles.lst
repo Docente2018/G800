@@ -1,0 +1,8 @@
+/home/andres/NetBeansProjects/ServicioU/spring-boot-demo/src/main/java/com/concretepage/entity/ArticleRowMapper.java
+/home/andres/NetBeansProjects/ServicioU/spring-boot-demo/src/main/java/com/concretepage/dao/ArticleDAO.java
+/home/andres/NetBeansProjects/ServicioU/spring-boot-demo/src/main/java/com/concretepage/entity/Article.java
+/home/andres/NetBeansProjects/ServicioU/spring-boot-demo/src/main/java/com/concretepage/controller/ArticleController.java
+/home/andres/NetBeansProjects/ServicioU/spring-boot-demo/src/main/java/com/concretepage/service/ArticleService.java
+/home/andres/NetBeansProjects/ServicioU/spring-boot-demo/src/main/java/com/concretepage/dao/IArticleDAO.java
+/home/andres/NetBeansProjects/ServicioU/spring-boot-demo/src/main/java/com/concretepage/MyApplication.java
+/home/andres/NetBeansProjects/ServicioU/spring-boot-demo/src/main/java/com/concretepage/service/IArticleService.java
