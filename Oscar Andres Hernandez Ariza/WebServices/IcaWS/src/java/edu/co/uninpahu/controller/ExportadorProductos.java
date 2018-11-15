@@ -15,7 +15,6 @@ import java.util.List;
 import javax.inject.Named;
 import javax.enterprise.context.RequestScoped;
 
-
 /**
  *
  * @author ADMIN
@@ -41,6 +40,7 @@ public class ExportadorProductos {
     public ExportadorProductos() {
     }
 
+    //Consumo el WS de consultarEspecies
     public List<VOESPECIESOPRODUCTOSAGRICOLAS> getEspecies() {
         if (especies == null) {
             ArrayOfVOESPECIESOPRODUCTOSAGRICOLAS arr = consultarEspecies(USUARIO, CONTRASENIA, IP_EQUIPO);
@@ -49,6 +49,7 @@ public class ExportadorProductos {
         return especies;
     }
 
+    //Consumo el WS de consultarExportadorCultivosProductos
     public List<VOEXPCULTIVOASISTPROD> getExportadorCultivosProductos() {
         if (exportadorProductos == null) {
             ArrayOfVOEXPCULTIVOASISTPROD arr = consultarExportadorCultivosProductos(null, idEspecie, USUARIO, CONTRASENIA, IP_EQUIPO);
@@ -57,6 +58,28 @@ public class ExportadorProductos {
         return exportadorProductos;
     }
 
+    public void guardarLista(Object o) {
+        String textoGuardar = "";
+        for (Object ob : (List<Object>) o) {
+            if (ob instanceof VOEXPCULTIVOASISTPROD) {
+                textoGuardar += "Id Especie: " + seletedEspecie.getId() + "\n";
+                textoGuardar += "Id Cultivos: " + ((VOEXPCULTIVOASISTPROD) ob).getIdCultivos()+ "\n";
+                textoGuardar += "Nombre del cultivo: " + ((VOEXPCULTIVOASISTPROD) ob).getNombreCultivo() + "\n";
+                textoGuardar += "Estado del producto: " + ((VOEXPCULTIVOASISTPROD) ob).getResultadoPrueba() + "\n";
+            }
+            if (ob instanceof VOESPECIESOPRODUCTOSAGRICOLAS) {
+                textoGuardar += "Id: " + ((VOESPECIESOPRODUCTOSAGRICOLAS) ob).getId() + "\n";
+                textoGuardar += "Descripcion: " + ((VOESPECIESOPRODUCTOSAGRICOLAS) ob).getDescripcion() + "\n";
+                textoGuardar += "Resultado Consulta: " + ((VOESPECIESOPRODUCTOSAGRICOLAS) ob).getResultadoConsulta() + "\n";
+            }
+            textoGuardar += "\n";
+        }
+
+        Archivo a = new Archivo();
+        System.out.println(a.escribirArchivo("../../../../../Log", textoGuardar));
+    }
+
+    //optengo el port del servicio para realizar las peticiones de todas las operaciones
     private WSCOSTANCIASSoap getPort() {
         try {
             if (port == null) {
@@ -67,7 +90,7 @@ public class ExportadorProductos {
             System.out.println(e.getCause());
             return null;
         }
-        
+
         return port;
     }
 
@@ -104,6 +127,5 @@ public class ExportadorProductos {
     public void setSeletedExportadorProductos(VOEXPCULTIVOASISTPROD seletedExportadorProductos) {
         this.seletedExportadorProductos = seletedExportadorProductos;
     }
-    
-    
+
 }
