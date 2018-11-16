@@ -1,0 +1,7 @@
+El proyecto esta hecho en ruby.
+
+1. El proyecto se encuentra publicado en heroku.
+link: https://api-pplication-u.herokuapp.com/animes
+
+2. para ver el codigo entrar a la carpeta app/controllers/anime_controller.rb
+

@@ -1,0 +1,17 @@
+
+<div class="panel panel-default">
+  <div class="panel-heading text-center">
+    <h3 class="panel-title">Ingresar animes por API</h3>
+  </div>
+  <div class="panel-body text-center">
+    <div class="col-md-4" style="padding-bottom: 15px">
+      <%= link_to 'Ver Datos a Ingresar(JSON)', web_service_data_animes_url, class: 'btn btn-success', target: :_blank %>
+    </div>
+    <div class="col-md-4" style="padding-bottom: 15px">
+      <%= link_to 'Ver datos actuales en la BD', consult_all_animes_url, class: 'btn btn-success', target: :_blank %>
+    </div>
+    <div class="col-md-4" style="padding-bottom: 15px">
+      <%= link_to 'Ingresar datos por JSON', web_service_update_animes_url, class: 'btn btn-success', target: :_blank %>
+    </div>
+  </div>
+</div>
