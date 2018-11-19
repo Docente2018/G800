@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Ventas</title>
+
+	<script src="./App/Views/js/jquery.js"></script>
+	<script src="./App/Views/js/bootstrap.js"></script>
+	<script src="./App/Views/js/bootstrap-3.js"></script>
+	<script src="./App/Views/js/bootstrap.min.js"></script>
+	<script src="./App/Views/js/functions.js"></script>
+
+	<link rel="stylesheet" href="./App/Views/css/bootstrap.css">
+	<link rel="stylesheet" href="./App/Views/css/bootstrap-3.1.css">
+	<link rel="stylesheet" href="./App/Views/css/styles.css">
+</head>
+<body>
+
+	<div class="container" style="margin-top: 5%;">
+		<div class="row">
+			<div class="col-md-12">
+				<h2 class="text-light bg-dark" style="padding: 5px 10px 8px 12px; border-radius: 3px">Resumen de ventas.</h2>
+				<div class="row">
+					<div class="col-md-12">
+						<button type="button" id="register-venta" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-plus-sign"></span> Registrar venta</button>
+						<button type="button" id="register-producto" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-plus-sign"></span> Registrar producto</button>
+						<button type="button" id="register-cliente" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-plus-sign"></span> Registrar cliente</button>
+					</div>
+				</div>
+				<hr>
+			</div>
+		</div>
+		<!-- Tabla de resumen de ventas -->
+		<div class="row">
+			<div class="col-md-12">
+				<table class="table" id="listVentas">
+					<thead class="thead-dark">
+						<tr>
+							<th scope="col">#</th>
+							<th scope="col">Cliente</th>
+							<th scope="col">Cantidad de productos</th>
+							<th scope="col">Valor venta</th>
+							<th scope="col">Fecha y Hora</th>
+							<th scope="col">Descripción</th>
+							<th scope="col" colspan="2">Opciones</th>
+						</tr>
+					</thead>
+					<tbody></tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+
+	<!-- Ventana modal de registro de ventas  -->
+	<div class="modal_content register_venta" style="display: none;">
+		<div class="modal_box">
+			<div class="container_modal ">
+				<div class="row">
+					<div class="col-md-12">
+						<h3 id="desc_modal">Registrar venta.</h3>
+						<span class="close_modal">X</span>
+						<hr>
+					</div>
+				</div>
+				<form action="#" method="post" id="form_register_ventas">
+					<div class="row">
+						<div class="col-sm-8"><span class="error_message btn btn-danger" style="display:none"></span></div>
+						<div class="col-sm-8"><span class="success_message btn btn-success" style="display:none"></span></div>
+					</div>
+					<div class="form-group">
+						<label for="cliente_id" class="required">Cliente:</label>
+						<select name="cliente_id" id="cliente_id" class="form-control">
+							<option value="no-option" hidden>Seleccione un cliente...</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<label for="cant_productos" class="required">Productos:</label>
+						<select name="cant_productos" id="cant_productos" class="form-control" multiple>							
+						</select>
+					</div>
+					<div class="form-group">
+						<label for="descripcion">Descripción:</label>
+						<textarea name="descripcion" id="descripcion" class="form-control" ></textarea>							
+						</select>
+					</div>
+					<div class="form-group">
+						<button type="submit" class="btn btn-success" id="btn-modal">Registrar.</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<!-- Ventana modal de registro de productos -->
+	<div class="modal_content register_productos" style="display: none;">
+		<div class="modal_box">
+			<div class="container_modal ">
+				<div class="row">
+					<div class="col-md-12">
+						<h3 id="desc_modal">Registrar producto.</h3>
+						<span class="close_modal">X</span>
+						<hr>
+					</div>
+				</div>
+				<form action="#" method="post" id="form_register_productos">
+					<div class="row">
+						<div class="col-sm-8"><span class="error_message btn btn-danger" style="display:none"></span></div>
+						<div class="col-sm-8"><span class="success_message btn btn-success" style="display:none"></span></div>
+					</div>
+					<div class="form-group">
+						<label for="nombre" class="required">Nombre:</label>
+						<input type="text" name="nombre" id="nombre" class="form-control">
+					</div>
+					<div class="form-group">
+						<label for="descripcion"  class="required">Descripción:</label>
+						<textarea name="descripcion" id="descripcion" class="form-control" ></textarea>							
+						</select>
+					</div>
+					<div class="form-group">
+						<label for="precio" class="required">Precio:</label>
+						<input type="number" name="precio" id="precio" class="form-control" max="99999999" step="0.01" >
+					</div>
+					<div class="form-group">
+						<button type="submit" class="btn btn-success" id="btn-modal">Registrar.</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
