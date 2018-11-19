@@ -1,49 +1,65 @@
-const url = "http://helpdesktask.gear.host/api/Usuarios";
+﻿const url = "/api/Usuarios";
 const getUsers = async _ => {
-    try{
+    try {
         let divUser = $("#users")
 
         let res = await fetch(url)
         if (res.status != 200) {
-            alert("error al cargar los datos")
+            alert("error al cargar los datos");
+            hideLoader();
             return;
         }
         let data = await res.json();
-        if(data.length > 0){
-            divUser.empty();
+        divUser.empty();
+        if (data.length > 0) {
+            
             data.forEach(x => {
-                divUser.append(`${x.nombre} </br>`);
+                divUser.append(`<div class="col-lg-12">${x.nombre} <button class="btn btn-primary" onclick="deleteUser(this.id)" id="${x.id}">Eliminar</button></div><div class="col-lg-12"></br></div>`);
             })
+        } else {
+            divUser.append('No hay usuarios disponibles');
         }
-    }catch(e){
+        hideLoader();
+    } catch (e) {
         console.log(e)
     }
 }
 
 const addUser = async _ => {
-    try{
-        let nombre = $("#nombre").val(), apellido = $("#apellido").val()
-        if(nombre.trim().length == 0 || apellido.trim().length == 0){
-            alert("Los campos no deben estar vacios");
-            return ;
-        }
-        let data = {nombre, apellido};
+    let nombre = $("#nombre").val(), apellido = $("#apellido").val()
+    if (nombre.trim().length == 0 || apellido.trim().length == 0) {
+        alert("Los campos no deben estar vacios");
+        return;
+    }
+    showLoader();
+    let data = { nombre, apellido };
 
-        let res = await fetch(url, {
-        method: 'POST', // or 'PUT'
-        body: JSON.stringify(data), // data can be `string` or {object}!
-        headers:{
+    let res = await fetch(url, {
+        method: 'POST',
+        body: JSON.stringify(data), 
+        headers: {
             'Content-Type': 'application/json'
         }
-        })
-        if(res.status == 200)
-            getUsers();
-        else
-            alert("error al agregar el usuario")
-    }catch(e){
-        console.log(e)
-    }
+    })
+    if (res.status >= 200 && res.status <= 299)
+        getUsers();
+    else
+        alert("error al agregar el usuario")
 }
 
-const determinante = (a11,a12,a13,a21,a22,a23,a31,a32,a33) => ((a11*a22*a33)-(a11*a23*a32)-(a12*a21*a33)+(a12*a23*a31)+(a13*a21*a32)-(a13*a22*a31));
+const deleteUser = async id => {
+    showLoader();
+    let res = await fetch(url + "/"+id, {
+        method: 'DELETE',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+    if (res.status >= 200 && res.status <= 299)
+        getUsers();
+    else
+        alert("error al eliminar el usuario " + id)
+}
+const showLoader = _ => $(".loader").show();
+const hideLoader = _ => $(".loader").hide();
 (getUsers)();
