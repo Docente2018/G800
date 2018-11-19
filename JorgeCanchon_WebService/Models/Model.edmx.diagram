@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="c64f3e2acf12465fa0a1c6f91150085d" Name="Diagram1">
+        <EntityTypeShape EntityType="helpdesk6Model.Caso" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="helpdesk6Model.ComentarioCaso" Width="1.5" PointX="5.25" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="helpdesk6Model.Prioridad" Width="1.5" PointX="0.75" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="helpdesk6Model.Usuario" Width="1.5" PointX="0.75" PointY="1.875" IsExpanded="true" />
+        <AssociationConnector Association="helpdesk6Model.FK__Caso__CodigoPrio__4222D4EF" ManuallyRouted="false" />
+        <AssociationConnector Association="helpdesk6Model.FK__Caso__CodigoPrio__49C3F6B7" ManuallyRouted="false" />
+        <AssociationConnector Association="helpdesk6Model.FK__Caso__CodigoPrio__4F7CD00D" ManuallyRouted="false" />
+        <AssociationConnector Association="helpdesk6Model.FK__Caso__CodigoPrio__5070F446" ManuallyRouted="false" />
+        <AssociationConnector Association="helpdesk6Model.FK__Caso__CodigoUsua__4316F928" ManuallyRouted="false" />
+        <AssociationConnector Association="helpdesk6Model.FK__Caso__CodigoUsua__440B1D61" ManuallyRouted="false" />
+        <AssociationConnector Association="helpdesk6Model.FK__Caso__CodigoUsua__4AB81AF0" ManuallyRouted="false" />
+        <AssociationConnector Association="helpdesk6Model.FK__Caso__CodigoUsua__4BAC3F29" ManuallyRouted="false" />
+        <AssociationConnector Association="helpdesk6Model.FK__Caso__CodigoUsua__5165187F" ManuallyRouted="false" />
+        <AssociationConnector Association="helpdesk6Model.FK__Caso__CodigoUsua__52593CB8" ManuallyRouted="false" />
+        <AssociationConnector Association="helpdesk6Model.FK__Comentari__Codig__44FF419A" ManuallyRouted="false" />
+        <AssociationConnector Association="helpdesk6Model.FK__Comentari__Codig__4CA06362" ManuallyRouted="false" />
+        <AssociationConnector Association="helpdesk6Model.FK__Comentari__Codig__534D60F1" ManuallyRouted="false" />
+        <AssociationConnector Association="helpdesk6Model.FK__Comentari__Codig__45F365D3" ManuallyRouted="false" />
+        <AssociationConnector Association="helpdesk6Model.FK__Comentari__Codig__4D94879B" ManuallyRouted="false" />
+        <AssociationConnector Association="helpdesk6Model.FK__Comentari__Codig__5441852A" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
