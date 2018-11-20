@@ -20,6 +20,8 @@ $server->wsdl->addComplexType('datos_persona_entrada', 'complexType', 'struct', 
 // Parametros de Salida
 $server->wsdl->addComplexType('datos_persona_salidad', 'complexType', 'struct', 'all', '', array('mensaje' => array('name' => 'mensaje', 'type' => 'xsd:string'))
 );
+
+
 $server->register('calculo_edad', // nombre del metodo o funcion
         array('datos_persona_entrada' => 'tns:datos_persona_entrada'), // parametros de entrada
         array('return' => 'tns:datos_persona_salidad'), // parametros de salida
@@ -29,6 +31,11 @@ $server->register('calculo_edad', // nombre del metodo o funcion
         'encoded', // use
         'La siguiente funcion recibe los parametros de la persona y calcula la Edad' // documentation
 );
+
+/**
+ * Funcion que toma los datos del cliente para calcular su edad,
+ * retorna el calculo de la edad
+ */
 
 function calculo_edad($datos) {
     $edad_actual = date('Y') - $datos['ano_nac'];
