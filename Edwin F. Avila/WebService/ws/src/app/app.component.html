@@ -1,0 +1,20 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">Noticiario</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+</nav>
+<br>
+<div class="card-columns">
+  
+  <div class="card" *ngFor="let noticia of noticias">
+    <img class="card-img-top" src="{{noticia.image}}" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title" *ngIf="noticia.anteTitle">"{{noticia.anteTitle}}"</h5>
+      <h5 class="card-title" *ngIf="!noticia.anteTitle">"{{noticia.mainCategory}}"</h5>
+      <p class="card-text">{{noticia.longTitle}}</p>
+      <a href="{{noticia.htmlUrl}}" class="btn btn-primary active" role="button" aria-pressed="true">Seguir Leyendo...</a>      
+    </div>
+  </div>
+
+</div>
