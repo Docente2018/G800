@@ -1,0 +1,99 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Sistemas de 4 variables</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+<ion-card>
+  <ion-card-content>
+
+   <ion-grid>
+
+	  <ion-row *ngFor="let row of matrix; let r = index">
+      <ion-col col-2 *ngFor="let col of row; let c = index">       
+        <ion-label class="centerText" *ngIf="r == 0">{{col.var}}</ion-label>
+         <div class="centerVars" *ngIf="c != 4">         
+          <ion-input name=col.id type="text" [(ngModel)]=col.value [value]=col.value></ion-input> 
+         </div>
+         <div class="centerText" *ngIf="c == 4">
+           <ion-input name=col.id type="text" [value]=col.value></ion-input> 
+         </div>
+      </ion-col>
+    </ion-row>
+
+	</ion-grid>
+
+  </ion-card-content>
+</ion-card>
+
+<button ion-button block (click)="solveMatrix()" icon-start>
+  <ion-icon name="calculator"></ion-icon>Calcular
+</button>  
+<button ion-button block color="danger" outline (click)="cleanMatrix()" icon-start>
+  <ion-icon name="trash"></ion-icon>Limpiar
+</button>
+<button ion-button block color="secondary" outline (click)="randomMatrix()" icon-start>
+  <ion-icon name="shuffle"></ion-icon>Random
+</button>
+
+<ion-card>
+
+  <ion-card-header>
+    <ion-icon name="cloud-download" [ngStyle]="{'color':'#0CA9EA'}" item-start *ngIf='solution.solve === "solve"'> Respuesta:</ion-icon>
+    <ion-icon name="cloud-download" [ngStyle]="{'color':'red'}" item-start *ngIf='solution.solve !== "solve"'> Respuesta:</ion-icon>
+  </ion-card-header>
+
+  <ion-card-content>
+
+    <ion-list *ngIf='solution.solve === "solve"'>
+      <ion-item>
+        <ion-icon name="checkmark-circle" [ngStyle]="{'color':'green'}" item-start>
+          <span> Valor de X: {{solution.message[0]}}</span>
+        </ion-icon>
+      </ion-item>
+      <ion-item>
+        <ion-icon name="checkmark-circle" [ngStyle]="{'color':'green'}" item-start>
+          <span> Valor de Y: {{solution.message[1]}}</span>
+        </ion-icon>
+      </ion-item>
+      <ion-item>
+        <ion-icon name="checkmark-circle" [ngStyle]="{'color':'green'}" item-start>
+          <span> Valor de Z: {{solution.message[2]}}</span>
+        </ion-icon>
+      </ion-item>
+      <ion-item>
+        <ion-icon name="checkmark-circle" [ngStyle]="{'color':'green'}" item-start>
+          <span> Valor de W: {{solution.message[3]}}</span>
+        </ion-icon>
+      </ion-item>                  
+    </ion-list>
+
+    <ion-list *ngIf='solution.solve === "not-solve"'>
+      <ion-item>
+        <ion-icon name="checkmark-circle" [ngStyle]="{'color':'red'}" item-start>{{solution.message}}</ion-icon>
+      </ion-item>
+    </ion-list>
+
+  </ion-card-content>
+
+</ion-card>
+
+<!--
+<ion-card>
+
+  <ion-card-header>
+    ERROR
+  </ion-card-header>
+
+  <ion-card-content>
+    {{error}}
+  </ion-card-content>
+
+</ion-card>
+-->
+</ion-content>

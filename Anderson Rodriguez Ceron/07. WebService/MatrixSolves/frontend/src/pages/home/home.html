@@ -1,0 +1,40 @@
+<ion-header>
+</ion-header>
+<ion-content class="card-background-page">
+  <ion-card>
+    <img src="../../assets/imgs/fondo_algebra.jpg"/>    
+    <div class="card-title">
+    	<span class="card-span-title">AlgebrApp</span>
+    </div>
+    <div class="card-subtitle"><span class="card-span-title">Solucionando sistemas de ecuaciones lineales</span></div>
+  </ion-card>
+
+  <ion-list *ngFor="let item of menu">
+    <button ion-item (click)="executePage( item.page )" icon-start>
+      <ion-icon name="grid" [ngStyle]="{'color': item.color }" item-start></ion-icon>
+      {{item.title}}
+    </button>
+  </ion-list>
+
+  <ion-list>
+  <ion-list-header>
+    Powered by
+  </ion-list-header>
+  <ion-item>  	
+    <ion-avatar item-start>
+      <img src="../../assets/imgs/anderson_r.jpeg">
+    </ion-avatar>
+    <h2>Anderson Rodriguez.</h2>
+    <p>Full Stack Developer.</p>
+    <p>Email: andersonrodriguezce@gmail.com</p>
+  </ion-item>
+  <ion-item>  	
+    <ion-avatar item-start>
+      <img src="../../assets/imgs/edwin_a.jpg">
+    </ion-avatar>
+    <h2>Edwin Ávila.</h2>
+    <p>Full Stack Developer.</p>
+    <p>Email: efavila2@misena.edu.co</p>
+  </ion-item>  
+  </ion-list>
+</ion-content>

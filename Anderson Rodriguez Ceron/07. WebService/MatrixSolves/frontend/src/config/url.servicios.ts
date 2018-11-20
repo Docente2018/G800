@@ -1,0 +1,1 @@
+export const URL_SERVICE = "https://restalgebra.herokuapp.com";
