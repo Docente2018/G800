@@ -34,7 +34,7 @@ $server->register('calculo_edad', // nombre del metodo o funcion
 
 /**
  * Funcion que toma los datos del cliente para calcular su edad,
- retorna el calculo de la edad
+ * retorna el calculo de la edad
  */
 
 function calculo_edad($datos) {
